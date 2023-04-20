@@ -1,3 +1,8 @@
+//Script assisted by Brackeys on youtube
+//https://www.youtube.com/watch?v=dwcT-Dch0bA
+//Date started: ??/??/2023
+//Date finished: ??/??/2023
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
