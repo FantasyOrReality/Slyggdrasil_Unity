@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public CharacterController controller;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(Input.GetAxisRaw("Player1Horizontal"));
+        Debug.Log(Input.GetAxisRaw("Player2Horizontal"));
+
+
     }
 }

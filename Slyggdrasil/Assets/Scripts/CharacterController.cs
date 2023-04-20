@@ -34,7 +34,7 @@ public class CharacterController : MonoBehaviour
 	[Header("Events")]
 	[Space]
 
-	public UnityEvent OnLandEvent; //When the player lands
+	private UnityEvent OnLandEvent; //When the player lands
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
