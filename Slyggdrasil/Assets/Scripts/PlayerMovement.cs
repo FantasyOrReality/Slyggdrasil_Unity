@@ -31,12 +31,12 @@ public class PlayerMovement : MonoBehaviour
         //Move player
         if (playerNumber == 1)
         {
-            controller.Move(player1HorizontalMove * Time.fixedDeltaTime, false);
+            controller.Move(player1HorizontalMove * Time.fixedDeltaTime, true);
 
         }
         else if (playerNumber == 2)
         {
-            controller.Move(player2HorizontalMove * Time.fixedDeltaTime, false);
+            controller.Move(player2HorizontalMove * Time.fixedDeltaTime, true);
         }
         else
         {
