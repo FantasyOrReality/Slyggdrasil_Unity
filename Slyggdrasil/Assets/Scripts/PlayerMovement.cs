@@ -11,18 +11,37 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float moveSpeed = 40.0f;
+
+    float player1HorizontalMove = 0.0f;
+    float player2HorizontalMove = 0.0f;
+
+	[SerializeField] 
+    private int playerNumber=0;
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetAxisRaw("Player1Horizontal"));
-        Debug.Log(Input.GetAxisRaw("Player2Horizontal"));
+        player1HorizontalMove = Input.GetAxisRaw("Player1Horizontal") * moveSpeed;
+        player2HorizontalMove = Input.GetAxisRaw("Player2Horizontal") * moveSpeed;
+    }
 
+    void FixedUpdate()
+    {
+        //Move player
+        if (playerNumber == 1)
+        {
+            controller.Move(player1HorizontalMove * Time.fixedDeltaTime, false);
+
+        }
+        else if (playerNumber == 2)
+        {
+            controller.Move(player2HorizontalMove * Time.fixedDeltaTime, false);
+        }
+        else
+        {
+
+        }    
 
     }
 }
