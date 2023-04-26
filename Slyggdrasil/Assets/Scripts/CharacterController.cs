@@ -1,6 +1,6 @@
 //Original script: https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs
 //Date started: 20/04/2023
-//Date finished: ??/??/2023
+//Date finished: 26/04/2023
 
 using System.Collections;
 using System.Collections.Generic;
