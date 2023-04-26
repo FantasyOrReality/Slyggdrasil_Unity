@@ -253,7 +253,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 2147483647
   m_GroundCheck: {fileID: 451071441}
   m_CeilingCheck: {fileID: 1451160888}
 --- !u!58 &169397749
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 2147483647
   m_GroundCheck: {fileID: 408308747}
   m_CeilingCheck: {fileID: 1607693374}
 --- !u!50 &1486244298
