@@ -248,12 +248,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 300
-  m_MovementSmoothing: 0
+  m_JumpForce: 5000
+  m_MovementSmoothing: 0.1
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 119
   m_GroundCheck: {fileID: 451071441}
   m_CeilingCheck: {fileID: 1451160888}
 --- !u!58 &169397749
@@ -343,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408308746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.044, y: -0.402, z: 0}
+  m_LocalPosition: {x: -0.044, y: -45.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -374,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451071440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.044, y: -0.402, z: 0}
+  m_LocalPosition: {x: -0.044, y: -0.503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -436,7 +436,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!23 &930465769
 MeshRenderer:
@@ -558,7 +558,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!23 &1388573537
 MeshRenderer:
@@ -649,7 +649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451160887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.044, y: 0.335, z: 0}
+  m_LocalPosition: {x: -0.044, y: 0.431, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -754,12 +754,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 25
-  m_MovementSmoothing: 0
+  m_JumpForce: 5000
+  m_MovementSmoothing: 0.1
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 119
   m_GroundCheck: {fileID: 408308747}
   m_CeilingCheck: {fileID: 1607693374}
 --- !u!50 &1486244298
@@ -876,7 +876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607693373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.044, y: 0.335, z: 0}
+  m_LocalPosition: {x: -0.044, y: 43.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

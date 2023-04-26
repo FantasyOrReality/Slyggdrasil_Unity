@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     float player1HorizontalMove = 0.0f;
     float player2HorizontalMove = 0.0f;
+    bool jump = true;
 
 	[SerializeField] 
     private int playerNumber=0;
@@ -28,15 +29,17 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        jump = true;
+
         //Move player
         if (playerNumber == 1)
         {
-            controller.Move(player1HorizontalMove * Time.fixedDeltaTime, true);
+            controller.Move(player1HorizontalMove * Time.fixedDeltaTime, jump);
 
         }
         else if (playerNumber == 2)
         {
-            controller.Move(player2HorizontalMove * Time.fixedDeltaTime, true);
+            controller.Move(player2HorizontalMove * Time.fixedDeltaTime, jump);
         }
         else
         {

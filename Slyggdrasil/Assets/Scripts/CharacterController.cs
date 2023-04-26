@@ -62,8 +62,14 @@ public class CharacterController : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
+				
+
+				// Add a vertical force to the player
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 				if (!wasGrounded)
+				{
 					OnLandEvent.Invoke();
+				}
 			}
 		}
 	}
@@ -71,8 +77,6 @@ public class CharacterController : MonoBehaviour
 
 	public void Move(float move, bool jump)
 	{
-
-
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
@@ -80,6 +84,7 @@ public class CharacterController : MonoBehaviour
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_MovingRight)
@@ -97,9 +102,11 @@ public class CharacterController : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
-			// Add a vertical force to the player.
 			m_Grounded = false;
+
+			// Add a vertical force to the player
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+
 		}
 	}
 
