@@ -37,38 +37,38 @@ public class CharacterController : MonoBehaviour
 	private UnityEvent OnLandEvent; //When the player lands
 
 	[System.Serializable]
-	public class BoolEvent : UnityEvent<bool> { }
+	public class BoolEvent : UnityEvent<bool> { } //The event class is declared
 
 	private void Awake()
 	{
-		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		m_Rigidbody2D = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
 
-		if (OnLandEvent == null)
+		if (OnLandEvent == null) //If the land event hasn't been triggered
 		{
-			OnLandEvent = new UnityEvent();
+			OnLandEvent = new UnityEvent(); //Trigger the landing event
 		}
 	}
 
 	private void FixedUpdate()
 	{
-		bool wasGrounded = m_Grounded;
-		m_Grounded = false;
+		bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
+		m_Grounded = false; //Reset the grounded state
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-		for (int i = 0; i < colliders.Length; i++)
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the ground and roof collisions
+		for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
-				m_Grounded = true;
+				m_Grounded = true; //Set the grounded state
 				
 
 				// Add a vertical force to the player
 				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 				if (!wasGrounded)
 				{
-					OnLandEvent.Invoke();
+					OnLandEvent.Invoke();//Start the Landing event
 				}
 			}
 		}

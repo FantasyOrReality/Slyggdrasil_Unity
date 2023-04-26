@@ -9,29 +9,29 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
+    public CharacterController controller; //The character controller's variable
 
-    public float moveSpeed = 40.0f;
+    public float moveSpeed = 40.0f; //The default moving speed
 
-    float player1HorizontalMove = 0.0f;
-    float player2HorizontalMove = 0.0f;
+    float player1HorizontalMove = 0.0f; //The default move distance for player 1
+    float player2HorizontalMove = 0.0f; //The default move distance for player 2
     bool jump = true;
 
 	[SerializeField] 
-    private int playerNumber=0;
+    private int playerNumber = 0; //The editor's variable for checking what player is using the script
 
     // Update is called once per frame
     void Update()
     {
-        player1HorizontalMove = Input.GetAxisRaw("Player1Horizontal") * moveSpeed;
-        player2HorizontalMove = Input.GetAxisRaw("Player2Horizontal") * moveSpeed;
+        player1HorizontalMove = Input.GetAxisRaw("Player1Horizontal") * moveSpeed; //Get the input from player 1 and give it a move speed
+        player2HorizontalMove = Input.GetAxisRaw("Player2Horizontal") * moveSpeed; //Get the input from player 2 and give it a move speed
     }
 
     void FixedUpdate()
     {
-        jump = true;
+        jump = true; //Autojumping for the players
 
-        //Move player
+        //Move players
         if (playerNumber == 1)
         {
             controller.Move(player1HorizontalMove * Time.fixedDeltaTime, jump);
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-
+            //Do nothing
         }    
 
     }
