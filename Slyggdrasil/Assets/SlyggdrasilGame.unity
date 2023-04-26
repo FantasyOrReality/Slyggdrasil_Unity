@@ -165,7 +165,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &169397743
 SpriteRenderer:
@@ -248,12 +248,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 5000
+  m_JumpForce: 10000
   m_MovementSmoothing: 0.1
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 375
   m_GroundCheck: {fileID: 451071441}
   m_CeilingCheck: {fileID: 1451160888}
 --- !u!58 &169397749
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 408308747}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: GroundCheckObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 1486244295}
   - component: {fileID: 1486244294}
   - component: {fileID: 1486244293}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Player2Obj
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -754,12 +754,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 5000
+  m_JumpForce: 10000
   m_MovementSmoothing: 0.1
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 247
   m_GroundCheck: {fileID: 408308747}
   m_CeilingCheck: {fileID: 1607693374}
 --- !u!50 &1486244298
@@ -781,7 +781,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &1486244299
 SpriteRenderer:
@@ -861,7 +861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607693374}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: CeilingCheckObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 807.9484
+  orthographic size: 1441.5225
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
