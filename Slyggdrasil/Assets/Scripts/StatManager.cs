@@ -1,31 +1,38 @@
+//Date started: 10/05/2023
+//Date finished: 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StatManager : MonoBehaviour
 {
-    //Make the object exist
-    //[SerializeField]
-    //public GameObject gameObject;
-
     //Reference the scripts
-    //[SerializeField]
-    //CharacterController controllerReference;
+    [SerializeField]
+    CharacterController controllerReference; //Character controller
+    [SerializeField]
+    PlatformEffectSetter platformEffectReference; //Script storing the base platform's jump value
+    [SerializeField]
+    PlatformIceEffectSetter platformIceEffectReference;
+    [SerializeField]
+    PlatformFakeEffectSetter platformFakeEffectReference;
 
     [SerializeField]
-    CharacterController controllerReference;
+    private float editableJumpVelocity;
 
+    //Specific jump values
+    private float specificBaseJumpValue;
+    private float specificIceJumpValue;
     [SerializeField]
-    public float editableJumpForce;
+    private float specificFakeJumpValue;
 
-    [SerializeField]
-    public float editableJumpVelocity;
     
 
     void Awake()
     {
-        //editableJumpForce = controllerReference.m_JumpForce;
         editableJumpVelocity = controllerReference.m_JumpVelocity;
+        specificBaseJumpValue = platformEffectReference.jumpValue;
+        specificIceJumpValue = platformIceEffectReference.jumpValue;
+        specificFakeJumpValue = platformFakeEffectReference.jumpValue;
 
     }
 
@@ -33,10 +40,10 @@ public class StatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(controllerReference.m_JumpForce);
-        //controllerReference.m_JumpForce = editableJumpForce;
-
         controllerReference.m_JumpVelocity = editableJumpVelocity;
+        platformEffectReference.jumpValue = specificBaseJumpValue;
+        platformIceEffectReference.jumpValue = specificIceJumpValue;
+        platformFakeEffectReference.jumpValue = specificFakeJumpValue;
     }
 
     //Detect collisions between the GameObjects with Colliders attached
@@ -53,17 +60,18 @@ public class StatManager : MonoBehaviour
 
         if (collision.gameObject.tag == "Platform")
         {
-            Debug.Log("Set base by tag");
-            editableJumpVelocity = 800.0f;
+            //Debug.Log("Set base by tag");
+            editableJumpVelocity = specificBaseJumpValue;
+
         }
 
-        //Check for a match with the specific tag on any GameObject that collides with your GameObject
         if (collision.gameObject.tag == "Ice")
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Set ice by tag");
+            //Debug.Log("Set ice by tag");
             //editableJumpForce = 1.0f;
-            editableJumpVelocity = 1100.0f;
+            editableJumpVelocity = specificIceJumpValue;
+
 
         }
     }

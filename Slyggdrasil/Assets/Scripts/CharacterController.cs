@@ -1,6 +1,6 @@
 //Original script: https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs
 //Date started: 20/04/2023
-//Date finished: 26/04/2023
+//Date finished: 10/05/2023
 
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +19,8 @@ public class CharacterController : MonoBehaviour
 	private bool m_AirControl = true; // Whether or not a player can steer while jumping;
 	[SerializeField] 
 	private LayerMask m_WhatIsGround; // A mask determining what is ground to the character
+	[SerializeField]
+	private LayerMask m_WhatIsFakeGround; // A mask determining what is fake to the character
 	[SerializeField] 
 	private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
 	[SerializeField] 
@@ -30,6 +32,8 @@ public class CharacterController : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D; //The player's rigidbody2D
 	private bool m_MovingRight = true;  // For determining which way the player is currently moving.
 	private Vector3 m_Velocity = Vector3.zero; //The velocity of the player
+
+
 
 	[Header("Events")]
 	[Space]
@@ -53,15 +57,16 @@ public class CharacterController : MonoBehaviour
 	{
 		bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
 		m_Grounded = false; //Reset the grounded state
-
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the ground and roof collisions
+		Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the ground and roof collisions
+
 		for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
-				m_Grounded = true; //Set the grounded state
+					m_Grounded = true; //Set the grounded state
 
 
 				// Add a vertical force to the player
@@ -75,6 +80,24 @@ public class CharacterController : MonoBehaviour
 				}
 			}
 		}
+
+		for (int i = 0; i < fakeColliders.Length; i++) //For each collider in the array...
+		{
+			if (fakeColliders[i].gameObject != gameObject)
+			{
+				m_Grounded = true; //Set the grounded state
+
+
+				// Let the player fall
+				//Debug.Log("FakePlatform Collision");
+
+				
+				
+				//OnLandEvent.Invoke();//Start the Landing event
+				
+			}
+		}
+
 	}
 
 
