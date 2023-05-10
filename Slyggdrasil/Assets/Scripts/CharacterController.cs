@@ -9,8 +9,8 @@ using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
-	[SerializeField] //This makes private variables into editable variables in unity
-	public float m_JumpForce = 400.0f; // Amount of force added when the player jumps.
+	[SerializeField]
+	public float m_JumpVelocity = 800.0f;
 
 	[Range(0, .3f)] [SerializeField] 
 	private float m_MovementSmoothing = .05f; // How much to smooth out the movement
@@ -41,7 +41,6 @@ public class CharacterController : MonoBehaviour
 
 	private void Awake()
 	{
-		m_JumpForce = 400.0f;
 		m_Rigidbody2D = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
 
 		if (OnLandEvent == null) //If the land event hasn't been triggered
@@ -63,10 +62,13 @@ public class CharacterController : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true; //Set the grounded state
-				
+
 
 				// Add a vertical force to the player
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				Vector2 velocity = m_Rigidbody2D.velocity; //Get the vector
+				velocity.y = m_JumpVelocity; //Modify a vector component
+				m_Rigidbody2D.velocity = velocity; //Set back to vector
+
 				if (!wasGrounded)
 				{
 					OnLandEvent.Invoke();//Start the Landing event
@@ -106,7 +108,7 @@ public class CharacterController : MonoBehaviour
 			m_Grounded = false;
 
 			// Add a vertical force to the player
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpVelocity));
 
 		}
 	}

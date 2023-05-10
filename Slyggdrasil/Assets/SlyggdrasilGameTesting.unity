@@ -209,7 +209,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 45
+  m_GravityScale: 100
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -296,8 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 4000
-  m_MovementSmoothing: 0.1
+  m_JumpVelocity: 800
+  m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
@@ -401,6 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerReference: {fileID: 169397746}
   editableJumpForce: 0
+  editableJumpVelocity: 0
 --- !u!1001 &258888918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2639,8 +2640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 4000
-  m_MovementSmoothing: 0.1
+  m_JumpVelocity: 800
+  m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
@@ -2662,7 +2663,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 45
+  m_GravityScale: 100
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2751,6 +2752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerReference: {fileID: 1486244297}
   editableJumpForce: 0
+  editableJumpVelocity: 0
 --- !u!1 &1607693373
 GameObject:
   m_ObjectHideFlags: 0

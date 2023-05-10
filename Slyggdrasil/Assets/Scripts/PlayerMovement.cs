@@ -9,7 +9,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller; //The character controller's variable
+    //public CharacterController controller; //The character controller's variable
+    public CharacterController controller; 
 
     public float moveSpeed = 40.0f; //The default moving speed
 
