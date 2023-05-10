@@ -10,7 +10,7 @@ using UnityEngine.Events;
 public class CharacterController : MonoBehaviour
 {
 	[SerializeField] //This makes private variables into editable variables in unity
-	private float m_JumpForce = 400f; // Amount of force added when the player jumps.
+	public float m_JumpForce = 400.0f; // Amount of force added when the player jumps.
 
 	[Range(0, .3f)] [SerializeField] 
 	private float m_MovementSmoothing = .05f; // How much to smooth out the movement
@@ -41,6 +41,7 @@ public class CharacterController : MonoBehaviour
 
 	private void Awake()
 	{
+		m_JumpForce = 400.0f;
 		m_Rigidbody2D = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
 
 		if (OnLandEvent == null) //If the land event hasn't been triggered

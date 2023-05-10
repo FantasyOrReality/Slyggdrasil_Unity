@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 169397751}
   - component: {fileID: 169397750}
   - component: {fileID: 169397753}
+  - component: {fileID: 169397754}
   m_Layer: 7
   m_Name: Player1Obj
   m_TagString: Player
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 10000
+  m_JumpForce: 4000
   m_MovementSmoothing: 0.1
   m_AirControl: 1
   m_WhatIsGround:
@@ -386,6 +387,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &169397754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169397741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07385cde4245b3b4fb089c58e2825520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1457836253}
+  controllerReference: {fileID: 169397746}
+  editableJumpForce: 0
 --- !u!1001 &258888918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2467,7 +2483,7 @@ GameObject:
   - component: {fileID: 1457836254}
   m_Layer: 6
   m_Name: PlaceholderIcePlatform1
-  m_TagString: Platform
+  m_TagString: Ice
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2623,7 +2639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 10000
+  m_JumpForce: 4000
   m_MovementSmoothing: 0.1
   m_AirControl: 1
   m_WhatIsGround:
