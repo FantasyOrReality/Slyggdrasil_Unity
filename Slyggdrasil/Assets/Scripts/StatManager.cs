@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeStats : MonoBehaviour
+public class StatManager : MonoBehaviour
 {
     //Make the object exist
-    [SerializeField]
-    public GameObject gameObject;
+    //[SerializeField]
+    //public GameObject gameObject;
 
     //Reference the controller script
     [SerializeField]
