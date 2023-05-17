@@ -59,6 +59,7 @@ public class PlatformBounce : MonoBehaviour
 
 		}
 	}
+
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
@@ -69,5 +70,7 @@ public class PlatformBounce : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	
 
 }

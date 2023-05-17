@@ -32,7 +32,7 @@ public class CharacterController : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D; //The player's rigidbody2D
 	private bool m_MovingRight = true;  // For determining which way the player is currently moving.
 	private Vector3 m_Velocity = Vector3.zero; //The velocity of the player
-
+	private int m_collisionNumber = 0; //to count trigger collisions
 
 
 	[Header("Events")]
@@ -57,10 +57,14 @@ public class CharacterController : MonoBehaviour
 	{
 		bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
 		m_Grounded = false; //Reset the grounded state
+		int collisionNumber = m_collisionNumber;
+		string collisionString = collisionNumber.ToString();
+		
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the ground and roof collisions
-		Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the ground and roof collisions
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the platform collisions
+		Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the fake platform collisions
+		Collider2D[] triggerColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the trigger collisions
 
 		for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
 		{
@@ -97,6 +101,14 @@ public class CharacterController : MonoBehaviour
 				
 			}
 		}
+
+		for (int i = 0; i < triggerColliders.Length; i++)
+        {
+			if (triggerColliders[i].gameObject != gameObject)
+            {
+				
+			}
+        }
 
 	}
 
@@ -147,4 +159,6 @@ public class CharacterController : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+
 }
