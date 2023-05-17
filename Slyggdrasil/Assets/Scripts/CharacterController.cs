@@ -25,14 +25,19 @@ public class CharacterController : MonoBehaviour
 	private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
 	[SerializeField] 
 	private Transform m_CeilingCheck; // A position marking where to check for ceilings
+	[SerializeField]
+	public GameObject nextLevelDetector; //The detector for the next level
+
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-	private Rigidbody2D m_Rigidbody2D; //The player's rigidbody2D
+	private Rigidbody2D m_PlayerRigidBody; //The player's rigidbody2D
 	private bool m_MovingRight = true;  // For determining which way the player is currently moving.
 	private Vector3 m_Velocity = Vector3.zero; //The velocity of the player
-	private int m_collisionNumber = 0; //to count trigger collisions
+
+	public bool player1passed = false;
+	public bool player2passed = false;
 
 
 	[Header("Events")]
@@ -45,7 +50,9 @@ public class CharacterController : MonoBehaviour
 
 	private void Awake()
 	{
-		m_Rigidbody2D = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
+		m_PlayerRigidBody = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
+
+
 
 		if (OnLandEvent == null) //If the land event hasn't been triggered
 		{
@@ -57,14 +64,11 @@ public class CharacterController : MonoBehaviour
 	{
 		bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
 		m_Grounded = false; //Reset the grounded state
-		int collisionNumber = m_collisionNumber;
-		string collisionString = collisionNumber.ToString();
 		
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the platform collisions
 		Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the fake platform collisions
-		Collider2D[] triggerColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the trigger collisions
 
 		for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
 		{
@@ -74,9 +78,9 @@ public class CharacterController : MonoBehaviour
 
 
 				// Add a vertical force to the player
-				Vector2 velocity = m_Rigidbody2D.velocity; //Get the vector
+				Vector2 velocity = m_PlayerRigidBody.velocity; //Get the vector
 				velocity.y = m_JumpVelocity; //Modify a vector component
-				m_Rigidbody2D.velocity = velocity; //Set back to vector
+				m_PlayerRigidBody.velocity = velocity; //Set back to vector
 
 				if (!wasGrounded)
 				{
@@ -102,14 +106,6 @@ public class CharacterController : MonoBehaviour
 			}
 		}
 
-		for (int i = 0; i < triggerColliders.Length; i++)
-        {
-			if (triggerColliders[i].gameObject != gameObject)
-            {
-				
-			}
-        }
-
 	}
 
 
@@ -119,9 +115,9 @@ public class CharacterController : MonoBehaviour
 		if (m_Grounded || m_AirControl)
 		{
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			Vector3 targetVelocity = new Vector2(move * 10f, m_PlayerRigidBody.velocity.y);
 			// And then smoothing it out and applying it to the character
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+			m_PlayerRigidBody.velocity = Vector3.SmoothDamp(m_PlayerRigidBody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 
 			// If the input is moving the player right and the player is facing left...
@@ -143,7 +139,7 @@ public class CharacterController : MonoBehaviour
 			m_Grounded = false;
 
 			// Add a vertical force to the player
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpVelocity));
+			m_PlayerRigidBody.AddForce(new Vector2(0f, m_JumpVelocity));
 
 		}
 	}
@@ -160,5 +156,24 @@ public class CharacterController : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
+	void OnTriggerEnter2D(Collider2D collision)
+    {
+		
+		if (collision.tag == "CounterTrigger")
+		{
+			if (m_PlayerRigidBody.tag == "Player1")
+			{
+				//Debug.Log("Collision between P1 and Trigger detected!");
+				player1passed = true;
+			}
+			else if (m_PlayerRigidBody.tag == "Player2")
+            {
+				//Debug.Log("Collision between P2 and Trigger detected!");
+				player2passed = true;
+
+			}
+		}
+
+	}
 
 }
