@@ -163,12 +163,12 @@ public class CharacterController : MonoBehaviour
 		{
 			if (m_PlayerRigidBody.tag == "Player1")
 			{
-				//Debug.Log("Collision between P1 and Trigger detected!");
+				Debug.Log("Collision between P1 and Trigger detected!");
 				player1passed = true;
 			}
 			else if (m_PlayerRigidBody.tag == "Player2")
             {
-				//Debug.Log("Collision between P2 and Trigger detected!");
+				Debug.Log("Collision between P2 and Trigger detected!");
 				player2passed = true;
 
 			}

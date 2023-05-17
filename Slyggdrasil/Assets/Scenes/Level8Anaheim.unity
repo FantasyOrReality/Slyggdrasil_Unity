@@ -2809,7 +2809,7 @@ GameObject:
   - component: {fileID: 769678388}
   m_Layer: 6
   m_Name: Moving Platform (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3430,6 +3430,79 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!1 &1001150250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001150253}
+  - component: {fileID: 1001150252}
+  - component: {fileID: 1001150251}
+  m_Layer: 8
+  m_Name: NextLevelDetector
+  m_TagString: CounterTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1001150251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001150250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b007ebc4da151a8458337389c0d8ef19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Controller: {fileID: 1845424659}
+  player2Controller: {fileID: 1189280985}
+--- !u!61 &1001150252
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001150250}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -129.17676, y: -34.37549}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1209.2761, y: 34.370117}
+  m_EdgeRadius: 0
+--- !u!4 &1001150253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001150250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 124, y: 3248, z: -60.263336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009487620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,7 +3514,7 @@ GameObject:
   - component: {fileID: 1009487621}
   m_Layer: 30
   m_Name: CeilingCheckObj
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3472,7 +3545,7 @@ GameObject:
   - component: {fileID: 1013857559}
   m_Layer: 6
   m_Name: Moving Platform (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3716,7 +3789,7 @@ GameObject:
   - component: {fileID: 1189280980}
   m_Layer: 31
   m_Name: Player2Obj
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3767,9 +3840,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 25.163689, y: -4.120758}
+  m_Offset: {x: 0.2444813, y: -0.0318889}
   serializedVersion: 2
-  m_Radius: 38.928093
+  m_Radius: 0.3919755
 --- !u!58 &1189280983
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3783,9 +3856,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -24.764446, y: -5.131611}
+  m_Offset: {x: -0.2391665, y: -0.02834558}
   serializedVersion: 2
-  m_Radius: 39.894665
+  m_Radius: 0.3902038
 --- !u!58 &1189280984
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3799,9 +3872,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.57572937}
+  m_Offset: {x: 0, y: 0.01442549}
   serializedVersion: 2
-  m_Radius: 43.06231
+  m_Radius: 0.4272251
 --- !u!114 &1189280985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3819,12 +3892,15 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1073741943
+    m_Bits: 1073742144
   m_WhatIsFakeGround:
     serializedVersion: 2
     m_Bits: 128
   m_GroundCheck: {fileID: 1460526594}
   m_CeilingCheck: {fileID: 2130169184}
+  nextLevelDetector: {fileID: 1001150250}
+  player1passed: 0
+  player2passed: 0
 --- !u!50 &1189280986
 Rigidbody2D:
   serializedVersion: 4
@@ -3886,7 +3962,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1926662691
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f701dbff0a2c0904b8d97ad39fb730dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3907,7 +3983,7 @@ Transform:
   m_GameObject: {fileID: 1189280979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 100, y: 300, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2130169184}
@@ -4044,7 +4120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356771785}
   - component: {fileID: 1356771786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingPlatformGem-1.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4323,7 +4399,7 @@ GameObject:
   - component: {fileID: 1460526594}
   m_Layer: 31
   m_Name: GroundCheckObj
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4336,7 +4412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460526593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.044, y: -45.6, z: 0}
+  m_LocalPosition: {x: -0.044, y: -0.443, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4794,7 +4870,7 @@ GameObject:
   - component: {fileID: 1598480523}
   m_Layer: 6
   m_Name: Moving Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4859,7 +4935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612914764}
   - component: {fileID: 1612914765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingPlatformGem-1.png (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5240,7 +5316,7 @@ GameObject:
   - component: {fileID: 1845424653}
   m_Layer: 30
   m_Name: Player1Obj
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5363,12 +5439,15 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 2147484023
+    m_Bits: 2147483968
   m_WhatIsFakeGround:
     serializedVersion: 2
     m_Bits: 128
   m_GroundCheck: {fileID: 2088116460}
   m_CeilingCheck: {fileID: 1009487621}
+  nextLevelDetector: {fileID: 1001150250}
+  player1passed: 0
+  player2passed: 0
 --- !u!50 &1845424660
 Rigidbody2D:
   serializedVersion: 4
@@ -9885,7 +9964,7 @@ GameObject:
   - component: {fileID: 2088116460}
   m_Layer: 30
   m_Name: GroundCheckObj
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9916,7 +9995,7 @@ GameObject:
   - component: {fileID: 2130169184}
   m_Layer: 31
   m_Name: CeilingCheckObj
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9929,7 +10008,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130169183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.044, y: 43.4, z: 0}
+  m_LocalPosition: {x: -0.044, y: 0.436, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

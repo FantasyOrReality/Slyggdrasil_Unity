@@ -2137,7 +2137,7 @@ GameObject:
   - component: {fileID: 375998377}
   m_Layer: 30
   m_Name: Player1Obj
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2266,6 +2266,9 @@ MonoBehaviour:
     m_Bits: 128
   m_GroundCheck: {fileID: 1306986338}
   m_CeilingCheck: {fileID: 197603286}
+  nextLevelDetector: {fileID: 574554694}
+  player1passed: 0
+  player2passed: 0
 --- !u!50 &375998384
 Rigidbody2D:
   serializedVersion: 4
@@ -2763,6 +2766,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 273c449916ed3d5439d92fd5f35c1edf, type: 3}
   m_PrefabInstance: {fileID: 572168937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &574554694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 574554697}
+  - component: {fileID: 574554696}
+  - component: {fileID: 574554695}
+  m_Layer: 8
+  m_Name: NextLevelDetector
+  m_TagString: CounterTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &574554695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574554694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b007ebc4da151a8458337389c0d8ef19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Controller: {fileID: 375998383}
+  player2Controller: {fileID: 2034008575}
+--- !u!61 &574554696
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574554694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -129.17676, y: -34.37549}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1209.2761, y: 34.370117}
+  m_EdgeRadius: 0
+--- !u!4 &574554697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574554694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 124, y: 3248, z: -60.263336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608255934
 GameObject:
   m_ObjectHideFlags: 0
@@ -9622,7 +9698,7 @@ GameObject:
   - component: {fileID: 2034008570}
   m_Layer: 31
   m_Name: Player2Obj
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9725,12 +9801,15 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1073741943
+    m_Bits: 1073742199
   m_WhatIsFakeGround:
     serializedVersion: 2
     m_Bits: 128
   m_GroundCheck: {fileID: 1590236560}
   m_CeilingCheck: {fileID: 349853572}
+  nextLevelDetector: {fileID: 574554694}
+  player1passed: 0
+  player2passed: 0
 --- !u!50 &2034008576
 Rigidbody2D:
   serializedVersion: 4
