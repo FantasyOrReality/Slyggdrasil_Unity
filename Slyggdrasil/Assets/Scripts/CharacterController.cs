@@ -28,6 +28,24 @@ public class CharacterController : MonoBehaviour
 	[SerializeField]
 	public GameObject nextLevelDetector; //The detector for the next level
 
+	[SerializeField]
+	public bool m_player1Life = true; //The default life player 1 starts with
+	[SerializeField]
+	public bool m_player1BonusLife = false; //Bonus life player 1 is granted by the first revival upgrade
+	[SerializeField]
+	public bool m_player1BonusLife2 = false; //A second bonus life player 1 is granted by another revival upgrade
+
+	[SerializeField]
+	public bool m_player2Life = true; //The default life player 2 starts with
+	[SerializeField]
+	public bool m_player2BonusLife = false; //Bonus life player 2 is granted by the first revival upgrade
+	[SerializeField]
+	public bool m_player2BonusLife2 = false; //A second bonus life player 2 is granted by another revival upgrade
+
+	public bool m_player1Alive = true; //Whether player 1 is dead or not
+	[SerializeField]
+	public bool m_player2Alive = true; //Whether player 2 is dead or not
+
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -165,15 +183,48 @@ public class CharacterController : MonoBehaviour
 			{
 				Debug.Log("Collision between P1 and Trigger detected!");
 				player1passed = true;
+				StartCoroutine(Cooldown(10));
+
 			}
 			else if (m_PlayerRigidBody.tag == "Player2")
             {
 				Debug.Log("Collision between P2 and Trigger detected!");
 				player2passed = true;
+				StartCoroutine(Cooldown(10));
+
+			}
+		}
+
+		if (collision.tag == "DeathTrigger")
+        {
+			if (m_PlayerRigidBody.tag == "Player1")
+			{
+				Debug.Log("Collision between P1 and death barrier detected!");
+
+
+				//Start cooldown with an IEnumeraror
+				StartCoroutine(Cooldown(10));
+
+
+			}
+			else if (m_PlayerRigidBody.tag == "Player2")
+			{
+				Debug.Log("Collision between P2 and death barrier detected!");
+				Debug.Log("Player lives are now" + m_player2Lives.ToString());
+
+
+				m_player2Lives -= 1;
+
+				//Start cooldown with an IEnumeraror
+				StartCoroutine(Cooldown(10));
 
 			}
 		}
 
 	}
 
+	IEnumerator Cooldown(int cooldownTime)
+    {
+		yield return new WaitForSeconds(cooldownTime);
+	}
 }

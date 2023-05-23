@@ -11,6 +11,7 @@ TagManager:
   - CounterTrigger
   - Player1
   - Player2
+  - DeathTrigger
   layers:
   - Default
   - TransparentFX
