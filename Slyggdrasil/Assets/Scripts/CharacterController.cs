@@ -6,9 +6,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 
 public class CharacterController : MonoBehaviour
 {
+	//Editable variables
+	[SerializeField]
+	public GameObject player1Object;
+	[SerializeField]
+	public GameObject player2Object;
+
 	[SerializeField]
 	public float m_JumpVelocity = 800.0f;
 
@@ -46,16 +54,23 @@ public class CharacterController : MonoBehaviour
 	[SerializeField]
 	public bool m_player2Alive = true; //Whether player 2 is dead or not
 
-
+	//Constants
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	private bool m_Grounded;            // Whether or not the player is grounded.
+
+	//Un-editable variables
 	private Rigidbody2D m_PlayerRigidBody; //The player's rigidbody2D
 	private bool m_MovingRight = true;  // For determining which way the player is currently moving.
 	private Vector3 m_Velocity = Vector3.zero; //The velocity of the player
 
 	public bool player1passed = false;
 	public bool player2passed = false;
+
+	//References
+	[SerializeField]
+	public CheckDeath checkForDeath;
+
 
 
 	[Header("Events")]
@@ -100,10 +115,10 @@ public class CharacterController : MonoBehaviour
 				velocity.y = m_JumpVelocity; //Modify a vector component
 				m_PlayerRigidBody.velocity = velocity; //Set back to vector
 
-				if (!wasGrounded)
-				{
-					OnLandEvent.Invoke();//Start the Landing event
-				}
+				//if (!wasGrounded)
+				//{
+					//OnLandEvent.Invoke();//Start the Landing event
+				//}
 			}
 		}
 
@@ -123,7 +138,6 @@ public class CharacterController : MonoBehaviour
 				
 			}
 		}
-
 	}
 
 
@@ -223,6 +237,8 @@ public class CharacterController : MonoBehaviour
                 {
 					m_player1Life = false;
 					m_player1Alive = false;
+					checkForDeath.player1Alive = false;
+					Destroy(player1Object, 0.1f);
 					Debug.Log("Player 1 lives = 0");
 
 
@@ -255,7 +271,13 @@ public class CharacterController : MonoBehaviour
 				{
 					m_player2Life = false;
 					m_player2Alive = false;
+					checkForDeath.player2Alive = false;
+
+
+					Destroy(player2Object, 0.1f);
+
 					Debug.Log("Player 2 lives = 0");
+
 
 
 				}
