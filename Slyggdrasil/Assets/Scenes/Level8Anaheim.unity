@@ -3877,8 +3877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Object: {fileID: 0}
-  player2Object: {fileID: 0}
+  player1Object: {fileID: 1845424652}
+  player2Object: {fileID: 1189280979}
   m_JumpVelocity: 800
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -3901,7 +3901,8 @@ MonoBehaviour:
   m_player2Alive: 1
   player1passed: 0
   player2passed: 0
-  checkForDeath: {fileID: 0}
+  checkForDeath: {fileID: 71362163}
+  statManager: {fileID: 1189280980}
 --- !u!50 &1189280986
 Rigidbody2D:
   serializedVersion: 4
@@ -5545,6 +5546,7 @@ MonoBehaviour:
   player1passed: 0
   player2passed: 0
   checkForDeath: {fileID: 71362163}
+  statManager: {fileID: 1845424653}
 --- !u!50 &1845424660
 Rigidbody2D:
   serializedVersion: 4

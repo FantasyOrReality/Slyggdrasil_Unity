@@ -11,5 +11,10 @@ public class ButtonFunctions : MonoBehaviour
 
     }
 
-    
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
+
+    }
+
 }

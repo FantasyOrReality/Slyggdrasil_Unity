@@ -2046,6 +2046,7 @@ MonoBehaviour:
   player1passed: 0
   player2passed: 0
   checkForDeath: {fileID: 1714979282}
+  statManager: {fileID: 962887235}
 --- !u!50 &962887241
 Rigidbody2D:
   serializedVersion: 4
@@ -8682,16 +8683,17 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 2008262827}
   nextLevelDetector: {fileID: 48769282}
   m_player1Life: 1
-  m_player1BonusLife: 1
-  m_player1BonusLife2: 1
+  m_player1BonusLife: 0
+  m_player1BonusLife2: 0
   m_player2Life: 1
-  m_player2BonusLife: 1
-  m_player2BonusLife2: 1
+  m_player2BonusLife: 0
+  m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
   player1passed: 0
   player2passed: 0
   checkForDeath: {fileID: 1714979282}
+  statManager: {fileID: 1832865058}
 --- !u!50 &1832865065
 Rigidbody2D:
   serializedVersion: 4

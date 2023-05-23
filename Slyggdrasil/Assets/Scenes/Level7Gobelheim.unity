@@ -3977,6 +3977,7 @@ MonoBehaviour:
   player1passed: 0
   player2passed: 0
   checkForDeath: {fileID: 833155828}
+  statManager: {fileID: 1189280980}
 --- !u!50 &1189280986
 Rigidbody2D:
   serializedVersion: 4
@@ -5386,6 +5387,7 @@ MonoBehaviour:
   player1passed: 0
   player2passed: 0
   checkForDeath: {fileID: 833155828}
+  statManager: {fileID: 1845424653}
 --- !u!50 &1845424660
 Rigidbody2D:
   serializedVersion: 4
