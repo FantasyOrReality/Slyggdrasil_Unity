@@ -2130,6 +2130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Object: {fileID: 981746074}
+  player2Object: {fileID: 381530576}
   m_JumpVelocity: 800
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -2152,6 +2154,8 @@ MonoBehaviour:
   m_player2Alive: 1
   player1passed: 0
   player2passed: 0
+  checkForDeath: {fileID: 795006303}
+  statManager: {fileID: 0}
 --- !u!50 &381530583
 Rigidbody2D:
   serializedVersion: 4
@@ -2212,7 +2216,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1926662691
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f701dbff0a2c0904b8d97ad39fb730dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2917,6 +2921,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Controller: {fileID: 981746081}
   player2Controller: {fileID: 381530582}
+  player1Alive: 1
+  player2Alive: 1
 --- !u!61 &795006304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3003,8 +3009,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.0000002, y: 2.0000005}
+  m_Offset: {x: 0.009752958, y: 1.4380674e-16}
+  m_Size: {x: 0.8729003, y: 2.0000002}
   m_Direction: 0
 --- !u!50 &804430639
 Rigidbody2D:
@@ -3350,6 +3356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae66000bbe7a7b34a951965bb7b3a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Object: {fileID: 981746074}
+  player2Object: {fileID: 381530576}
   m_JumpVelocity: 800
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -3372,6 +3380,8 @@ MonoBehaviour:
   m_player2Alive: 1
   player1passed: 0
   player2passed: 0
+  checkForDeath: {fileID: 795006303}
+  statManager: {fileID: 0}
 --- !u!50 &981746082
 Rigidbody2D:
   serializedVersion: 4
@@ -3432,7 +3442,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1926662691
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: da598b89ea9a4a043a89b7119fbdad40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

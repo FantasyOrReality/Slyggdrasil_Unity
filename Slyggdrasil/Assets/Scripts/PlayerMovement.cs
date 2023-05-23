@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     float player1HorizontalMove = 0.0f; //The default move distance for player 1
     float player2HorizontalMove = 0.0f; //The default move distance for player 2
-    bool jump = true;
+    //bool jump = true;
 
 	[SerializeField] 
     private int playerNumber = 0; //The editor's variable for checking what player is using the script
@@ -30,17 +30,15 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        jump = true; //Autojumping for the players
-
         //Move players
         if (playerNumber == 1)
         {
-            controller.Move(player1HorizontalMove * Time.fixedDeltaTime, jump);
+            controller.Move(player1HorizontalMove * Time.fixedDeltaTime);
 
         }
         else if (playerNumber == 2)
         {
-            controller.Move(player2HorizontalMove * Time.fixedDeltaTime, jump);
+            controller.Move(player2HorizontalMove * Time.fixedDeltaTime);
         }
         else
         {

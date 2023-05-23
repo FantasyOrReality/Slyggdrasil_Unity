@@ -70,6 +70,7 @@ public class CharacterController : MonoBehaviour
 	//References
 	[SerializeField]
 	public CheckDeath checkForDeath;
+	public StatManager statManager;
 
 
 
@@ -107,17 +108,20 @@ public class CharacterController : MonoBehaviour
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
-					m_Grounded = true; //Set the grounded state
-
-
 				// Add a vertical force to the player
 				Vector2 velocity = m_PlayerRigidBody.velocity; //Get the vector
 				velocity.y = m_JumpVelocity; //Modify a vector component
 				m_PlayerRigidBody.velocity = velocity; //Set back to vector
 
+				m_Grounded = true; //Set the grounded state
+
+
+				
+
+
 				//if (!wasGrounded)
 				//{
-					//OnLandEvent.Invoke();//Start the Landing event
+				//OnLandEvent.Invoke();//Start the Landing event
 				//}
 			}
 		}
@@ -141,39 +145,37 @@ public class CharacterController : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool jump)
+	public void Move(float move)
 	{
-		//only control the player if grounded or airControl is turned on
-		if (m_Grounded || m_AirControl)
+		
+		// Move the character by finding the target velocity
+		Vector3 targetVelocity = new Vector2(move * 10f, m_PlayerRigidBody.velocity.y);
+		// And then smoothing it out and applying it to the character
+		m_PlayerRigidBody.velocity = Vector3.SmoothDamp(m_PlayerRigidBody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+
+		// If the input is moving the player right and the player is facing left...
+		if (move > 0 && !m_MovingRight)
 		{
-			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_PlayerRigidBody.velocity.y);
-			// And then smoothing it out and applying it to the character
-			m_PlayerRigidBody.velocity = Vector3.SmoothDamp(m_PlayerRigidBody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-
-			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_MovingRight)
-			{
-				//flip the player.
-				Flip();
-			}
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_MovingRight)
-			{
-				//flip the player.
-				Flip();
-			}
+			//flip the player.
+			Flip();
 		}
-		// If the player should jump...
-		if (m_Grounded && jump)
+		// Otherwise if the input is moving the player left and the player is facing right...
+		else if (move < 0 && m_MovingRight)
 		{
-			m_Grounded = false;
+			//flip the player.
+			Flip();
+		}
+		
+		// If the player should jump...
+		//if (m_Grounded && jump)
+		//{
+			//m_Grounded = false;
 
 			// Add a vertical force to the player
-			m_PlayerRigidBody.AddForce(new Vector2(0f, m_JumpVelocity));
+			//m_PlayerRigidBody.AddForce(new Vector2(0f, m_JumpVelocity));
 
-		}
+		//}
 	}
 
 

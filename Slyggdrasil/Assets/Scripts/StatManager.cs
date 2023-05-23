@@ -38,7 +38,7 @@ public class StatManager : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         controllerReference.m_JumpVelocity = editableJumpVelocity;
         platformEffectReference.jumpValue = specificBaseJumpValue;
