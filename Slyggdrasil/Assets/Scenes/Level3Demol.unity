@@ -2155,7 +2155,7 @@ MonoBehaviour:
   player1passed: 0
   player2passed: 0
   checkForDeath: {fileID: 795006303}
-  statManager: {fileID: 0}
+  statManager: {fileID: 381530577}
 --- !u!50 &381530583
 Rigidbody2D:
   serializedVersion: 4
@@ -2555,7 +2555,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!4 &579768934
@@ -3381,7 +3381,7 @@ MonoBehaviour:
   player1passed: 0
   player2passed: 0
   checkForDeath: {fileID: 795006303}
-  statManager: {fileID: 0}
+  statManager: {fileID: 981746075}
 --- !u!50 &981746082
 Rigidbody2D:
   serializedVersion: 4
