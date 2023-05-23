@@ -14,14 +14,14 @@ public class CheckDeath : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (player1Controller.m_player1Lives <= 0)
+        if (player1Controller.m_player1Alive == false)
         {
             Debug.Log("Player 1 is dead");
             //Destroy the game object for player 1 
             StartCoroutine(Cooldown(10));
 
         }
-        else if (player2Controller.m_player2Lives <= 0)
+        else if (player2Controller.m_player2Alive == false)
         {
             Debug.Log("Player 2 is dead");
 
@@ -32,7 +32,7 @@ public class CheckDeath : MonoBehaviour
 
         }
 
-        else if (player1Controller.m_player1Lives <=0 && player2Controller.m_player2Lives <= 0)
+        else if (player1Controller.m_player1Alive == false && player2Controller.m_player2Alive == false)
         {
 
             //Change to the loss screen

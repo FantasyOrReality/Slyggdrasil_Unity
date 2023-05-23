@@ -201,25 +201,69 @@ public class CharacterController : MonoBehaviour
 			{
 				Debug.Log("Collision between P1 and death barrier detected!");
 
+				//Go through the life system
+				if (m_player1BonusLife2 == true)
+                {
+					StartCoroutine(Cooldown(10));
+					Debug.Log("Player 1 lives = 2");
+					m_player1BonusLife2 = false;
 
-				//Start cooldown with an IEnumeraror
-				StartCoroutine(Cooldown(10));
+
+				}
+				else if(m_player1BonusLife2 == false && m_player1BonusLife == true)
+                {
+					StartCoroutine(Cooldown(10));
+					Debug.Log("Player 1 lives = 1");
+					m_player1BonusLife = false;
+
+
+
+				}
+				else if (m_player1BonusLife2 == false && m_player1BonusLife == false && m_player1Life == true)
+                {
+					m_player1Life = false;
+					m_player1Alive = false;
+					Debug.Log("Player 1 lives = 0");
+
+
+				}
+
+
 
 
 			}
 			else if (m_PlayerRigidBody.tag == "Player2")
 			{
 				Debug.Log("Collision between P2 and death barrier detected!");
-				Debug.Log("Player lives are now" + m_player2Lives.ToString());
+				//Go through the life system
+				if (m_player2BonusLife2 == true)
+				{
+					m_player2BonusLife2 = false;
+					StartCoroutine(Cooldown(10));
+					Debug.Log("Player 2 lives = 2");
+
+				}
+				else if (m_player2BonusLife == true)
+				{
+					m_player2BonusLife = false;
+					StartCoroutine(Cooldown(10));
+					Debug.Log("Player 2 lives = 1");
 
 
-				m_player2Lives -= 1;
+				}
+				else if (m_player2Life == true)
+				{
+					m_player2Life = false;
+					m_player2Alive = false;
+					Debug.Log("Player 2 lives = 0");
 
-				//Start cooldown with an IEnumeraror
-				StartCoroutine(Cooldown(10));
+
+				}
 
 			}
+
 		}
+		StartCoroutine(Cooldown(10));
 
 	}
 
