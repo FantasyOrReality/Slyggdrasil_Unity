@@ -23,8 +23,8 @@ public class CharacterController : MonoBehaviour
 	[Range(0, .3f)] [SerializeField] 
 	private float m_MovementSmoothing = .05f; // How much to smooth out the movement
 
-	[SerializeField] 
-	private bool m_AirControl = true; // Whether or not a player can steer while jumping;
+	//[SerializeField] 
+	//private bool m_AirControl = true; // Whether or not a player can steer while jumping;
 	[SerializeField] 
 	private LayerMask m_WhatIsGround; // A mask determining what is ground to the character
 	[SerializeField]
@@ -66,6 +66,10 @@ public class CharacterController : MonoBehaviour
 
 	public bool player1passed = false;
 	public bool player2passed = false;
+
+	public bool player1Win = false;
+	public bool player2Win = false;
+
 
 	//References
 	[SerializeField]
@@ -211,6 +215,21 @@ public class CharacterController : MonoBehaviour
 			}
 		}
 
+		if (collision.tag == "WinTrigger")
+		{
+			if (m_PlayerRigidBody.tag == "Player1")
+			{
+				player1Win = true;
+				player2Win = false;
+			}
+			else if (m_PlayerRigidBody.tag == "Player2")
+			{
+				player1Win = false;
+				player2Win = true;
+			}
+
+		}
+
 		if (collision.tag == "DeathTrigger")
         {
 			if (m_PlayerRigidBody.tag == "Player1")
@@ -287,6 +306,8 @@ public class CharacterController : MonoBehaviour
 			}
 
 		}
+
+		
 		StartCoroutine(Cooldown(10));
 
 	}

@@ -23,6 +23,18 @@ public class NextLevel : MonoBehaviour
             levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
             Debug.Log("Level " + levelNumber + " loaded.");
 
+            
+
+        }
+        if (player1Controller.player1Win == true)
+        {
+            SceneManager.LoadScene("Player1WinMenu"); //Load the winning screen for player 1
+
+        }
+        else if (player2Controller.player2Win == true)
+        {
+            SceneManager.LoadScene("Player2WinMenu"); //Load the winning screen for player 2
+
         }
 
     }
