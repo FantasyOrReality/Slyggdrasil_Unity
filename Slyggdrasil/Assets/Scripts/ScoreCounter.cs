@@ -18,7 +18,10 @@ public class ScoreCounter : MonoBehaviour
 
     [SerializeField]
     public int startingHeight = 0;
-    
+
+    //Get the end result of the score
+    public int endScore1;
+    public int endScore2;
 
 
     void Start()
@@ -79,8 +82,8 @@ public class ScoreCounter : MonoBehaviour
         {
             player1Score = newPlayer1Height ;
             newPlayer1Height = newPlayer1Height + startingHeight;
-
-            Debug.Log(player1Score + startingHeight);
+            endScore1 = player1Score + startingHeight;
+            Debug.Log(endScore1);
 
         }
     }
@@ -91,8 +94,9 @@ public class ScoreCounter : MonoBehaviour
         {
             player2Score = newPlayer2Height;
             newPlayer2Height = newPlayer2Height + startingHeight;
+            endScore2 = player2Score + startingHeight;
 
-            Debug.Log(player2Score + startingHeight);
+            Debug.Log(endScore2);
 
         }
     }

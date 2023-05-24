@@ -2137,7 +2137,7 @@ MonoBehaviour:
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1073742198
+    m_Bits: 1073742144
   m_WhatIsFakeGround:
     serializedVersion: 2
     m_Bits: 128
