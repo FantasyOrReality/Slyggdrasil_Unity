@@ -49,10 +49,14 @@ public class CharacterController : MonoBehaviour
 	public bool m_player2BonusLife = false; //Bonus life player 2 is granted by the first revival upgrade
 	[SerializeField]
 	public bool m_player2BonusLife2 = false; //A second bonus life player 2 is granted by another revival upgrade
-
+	[SerializeField]
 	public bool m_player1Alive = true; //Whether player 1 is dead or not
 	[SerializeField]
 	public bool m_player2Alive = true; //Whether player 2 is dead or not
+
+	[SerializeField]
+	public int levelBonus;
+
 
 	//Constants
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -69,7 +73,6 @@ public class CharacterController : MonoBehaviour
 
 	public bool player1Win = false;
 	public bool player2Win = false;
-
 
 	//References
 	[SerializeField]
@@ -205,7 +208,7 @@ public class CharacterController : MonoBehaviour
 			{
 				Debug.Log("Collision between P1 and Trigger detected!");
 				player1passed = true;
-				scoreCounter.UpdatePlayer1Score(360);
+				scoreCounter.UpdatePlayer1Score(levelBonus);
 				StartCoroutine(Cooldown(10));
 
 			}

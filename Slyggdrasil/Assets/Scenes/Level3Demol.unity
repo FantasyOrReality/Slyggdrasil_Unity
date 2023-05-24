@@ -2152,6 +2152,7 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  levelBonus: 750
   m_PlayerRigidBody: {fileID: 381530583}
   player1passed: 0
   player2passed: 0
@@ -3401,6 +3402,7 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  levelBonus: 750
   m_PlayerRigidBody: {fileID: 981746082}
   player1passed: 0
   player2passed: 0

@@ -3981,6 +3981,7 @@ GameObject:
   - component: {fileID: 1189280982}
   - component: {fileID: 1189280981}
   - component: {fileID: 1189280980}
+  - component: {fileID: 1189280989}
   m_Layer: 31
   m_Name: Player2Obj
   m_TagString: Player2
@@ -4102,12 +4103,15 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  levelBonus: 1830
+  m_PlayerRigidBody: {fileID: 1189280986}
   player1passed: 0
   player2passed: 0
   player1Win: 0
   player2Win: 0
   checkForDeath: {fileID: 71362163}
   statManager: {fileID: 1189280980}
+  scoreCounter: {fileID: 1189280989}
 --- !u!50 &1189280986
 Rigidbody2D:
   serializedVersion: 4
@@ -4198,6 +4202,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1189280989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189280979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7efc5b66574a9d4cb38f3d710ba71ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Controller: {fileID: 1845424659}
+  player2Controller: {fileID: 1189280985}
+  player1Height: 0
+  player2Height: 0
+  player1Score: 0
+  player2Score: 0
+  startingHeight: 1470
 --- !u!1 &1327620624
 GameObject:
   m_ObjectHideFlags: 0
@@ -5528,6 +5551,7 @@ GameObject:
   - component: {fileID: 1845424655}
   - component: {fileID: 1845424654}
   - component: {fileID: 1845424653}
+  - component: {fileID: 1845424663}
   m_Layer: 30
   m_Name: Player1Obj
   m_TagString: Player1
@@ -5669,12 +5693,15 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  levelBonus: 1830
+  m_PlayerRigidBody: {fileID: 1845424660}
   player1passed: 0
   player2passed: 0
   player1Win: 0
   player2Win: 0
   checkForDeath: {fileID: 71362163}
   statManager: {fileID: 1845424653}
+  scoreCounter: {fileID: 1845424663}
 --- !u!50 &1845424660
 Rigidbody2D:
   serializedVersion: 4
@@ -5765,6 +5792,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1845424663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845424652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7efc5b66574a9d4cb38f3d710ba71ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Controller: {fileID: 1845424659}
+  player2Controller: {fileID: 1189280985}
+  player1Height: 0
+  player2Height: 0
+  player1Score: 0
+  player2Score: 0
+  startingHeight: 1470
 --- !u!1 &1851070174
 GameObject:
   m_ObjectHideFlags: 0

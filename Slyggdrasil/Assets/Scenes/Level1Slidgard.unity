@@ -2043,6 +2043,7 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  levelBonus: 360
   m_PlayerRigidBody: {fileID: 962887241}
   player1passed: 0
   player2passed: 0
@@ -2159,6 +2160,7 @@ MonoBehaviour:
   player2Height: 0
   player1Score: 0
   player2Score: 0
+  startingHeight: 0
 --- !u!1 &963638050
 GameObject:
   m_ObjectHideFlags: 0
@@ -8712,6 +8714,7 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  levelBonus: 360
   m_PlayerRigidBody: {fileID: 1832865065}
   player1passed: 0
   player2passed: 0
@@ -8828,6 +8831,7 @@ MonoBehaviour:
   player2Height: 0
   player1Score: 0
   player2Score: 0
+  startingHeight: 0
 --- !u!1001 &1849335750
 PrefabInstance:
   m_ObjectHideFlags: 0
