@@ -29,7 +29,27 @@ public class NextLevel : MonoBehaviour
             }
         }
 
-        if(player1Controller != null)
+        if (player2Controller == null && player1Controller != null)
+        {
+            if (player1Controller.player1passed == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
+                Debug.Log("Level " + levelNumber + " loaded.");
+            }
+        }
+
+        if (player1Controller == null && player2Controller != null)
+        {
+            if (player2Controller.player2passed == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
+                Debug.Log("Level " + levelNumber + " loaded.");
+            }
+        }
+
+        if (player1Controller != null)
         {
             if (player1Controller.player1Win == true)
             {

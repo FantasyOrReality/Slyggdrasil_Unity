@@ -304,8 +304,8 @@ public class CharacterController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
     {
-		if (player1Object != null && player2Object != null)
-		{
+		//if (player1Object != null && player2Object == null)
+		//{
 			if (collision.tag == "CounterTrigger")
 			{
 				if (m_PlayerRigidBody.tag == "Player1")
@@ -322,9 +322,9 @@ public class CharacterController : MonoBehaviour
 					{
 						Debug.Log("Collision between P1 and Trigger detected!");
 						player1passed = true;
-						player2passed = true;
+						//player2passed = true;
 						scoreCounter.UpdatePlayer1Score(levelBonus);
-						scoreCounter.UpdatePlayer2Score(0);
+						//scoreCounter.UpdatePlayer2Score(0);
 						StartCoroutine(Cooldown(10));
 					}
 
@@ -340,10 +340,10 @@ public class CharacterController : MonoBehaviour
 
 						StartCoroutine(Cooldown(10));
 					}
-					else if (checkForDeath.player1Alive == false && checkForDeath.player2Alive == false)
+					else if (checkForDeath.player1Alive == false && checkForDeath.player2Alive == true)
 					{
 						Debug.Log("Collision between P2 and Trigger detected!");
-						player1passed = true;
+						//player1passed = true;
 						player2passed = true;
 						scoreCounter.UpdatePlayer2Score(levelBonus);
 						scoreCounter.UpdatePlayer1Score(0);
@@ -447,7 +447,7 @@ public class CharacterController : MonoBehaviour
 
 
 			StartCoroutine(Cooldown(10));
-		}
+		//}
 	}
 
 	IEnumerator Cooldown(int cooldownTime)
