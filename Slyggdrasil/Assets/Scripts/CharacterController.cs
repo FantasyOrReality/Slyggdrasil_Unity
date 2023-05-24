@@ -80,6 +80,7 @@ public class CharacterController : MonoBehaviour
 
 	public StatManager statManager;
 	public ScoreCounter scoreCounter;
+	//public PlayerExistTracker playerExistTracker;
 
 
 
@@ -396,6 +397,7 @@ public class CharacterController : MonoBehaviour
 					{
 						m_player1Life = false;
 						m_player1Alive = false;
+						//playerExistTracker.MonitorLives(true, false, false);// Monitor lives(Is this player 1?, is this player 2?, is the player alive?)
 						checkForDeath.player1Alive = false;
 						Destroy(player1Object, 0.1f);
 						Debug.Log("Player 1 lives = 0");
@@ -431,6 +433,9 @@ public class CharacterController : MonoBehaviour
 						m_player2Life = false;
 						m_player2Alive = false;
 						checkForDeath.player2Alive = false;
+
+					//playerExistTracker.MonitorLives(false, true, false);// Monitor lives(Is this player 1?, is this player 2?, is the player alive?)
+
 
 
 						Destroy(player2Object, 0.1f);

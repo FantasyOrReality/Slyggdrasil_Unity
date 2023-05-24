@@ -29,7 +29,7 @@ public class NextLevel : MonoBehaviour
             }
         }
 
-        if (player2Controller == null && player1Controller != null)
+        if ( player2Controller == null && player1Controller != null)
         {
             if (player1Controller.player1passed == true)
             {

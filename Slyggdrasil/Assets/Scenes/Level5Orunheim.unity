@@ -2286,6 +2286,7 @@ MonoBehaviour:
   checkForDeath: {fileID: 1858405329}
   statManager: {fileID: 375998377}
   scoreCounter: {fileID: 375998387}
+  playerExistTracker: {fileID: 0}
 --- !u!50 &375998384
 Rigidbody2D:
   serializedVersion: 4
@@ -5197,7 +5198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603272037}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 500, y: 2330, z: -0.040118024}
+  m_LocalPosition: {x: 300, y: 2330, z: -0.040118024}
   m_LocalScale: {x: 50, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9938,6 +9939,7 @@ MonoBehaviour:
   checkForDeath: {fileID: 1858405329}
   statManager: {fileID: 2034008570}
   scoreCounter: {fileID: 2034008579}
+  playerExistTracker: {fileID: 0}
 --- !u!50 &2034008576
 Rigidbody2D:
   serializedVersion: 4

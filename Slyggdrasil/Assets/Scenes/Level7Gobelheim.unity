@@ -3983,6 +3983,7 @@ MonoBehaviour:
   checkForDeath: {fileID: 833155828}
   statManager: {fileID: 1189280980}
   scoreCounter: {fileID: 1189280989}
+  playerExistTracker: {fileID: 0}
 --- !u!50 &1189280986
 Rigidbody2D:
   serializedVersion: 4
@@ -5417,6 +5418,7 @@ MonoBehaviour:
   checkForDeath: {fileID: 833155828}
   statManager: {fileID: 1845424653}
   scoreCounter: {fileID: 1845424663}
+  playerExistTracker: {fileID: 0}
 --- !u!50 &1845424660
 Rigidbody2D:
   serializedVersion: 4
