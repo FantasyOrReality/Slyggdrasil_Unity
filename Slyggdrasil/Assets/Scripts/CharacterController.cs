@@ -60,7 +60,7 @@ public class CharacterController : MonoBehaviour
 	private bool m_Grounded;            // Whether or not the player is grounded.
 
 	//Un-editable variables
-	private Rigidbody2D m_PlayerRigidBody; //The player's rigidbody2D
+	public Rigidbody2D m_PlayerRigidBody; //The player's rigidbody2D
 	private bool m_MovingRight = true;  // For determining which way the player is currently moving.
 	private Vector3 m_Velocity = Vector3.zero; //The velocity of the player
 
@@ -74,7 +74,9 @@ public class CharacterController : MonoBehaviour
 	//References
 	[SerializeField]
 	public CheckDeath checkForDeath;
+
 	public StatManager statManager;
+	public ScoreCounter scoreCounter;
 
 
 
@@ -203,6 +205,7 @@ public class CharacterController : MonoBehaviour
 			{
 				Debug.Log("Collision between P1 and Trigger detected!");
 				player1passed = true;
+				scoreCounter.UpdatePlayer1Score(360);
 				StartCoroutine(Cooldown(10));
 
 			}
@@ -210,6 +213,9 @@ public class CharacterController : MonoBehaviour
             {
 				Debug.Log("Collision between P2 and Trigger detected!");
 				player2passed = true;
+				
+				scoreCounter.UpdatePlayer2Score(360);
+
 				StartCoroutine(Cooldown(10));
 
 			}

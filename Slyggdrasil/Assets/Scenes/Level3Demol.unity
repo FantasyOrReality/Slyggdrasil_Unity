@@ -2030,6 +2030,7 @@ GameObject:
   - component: {fileID: 381530579}
   - component: {fileID: 381530578}
   - component: {fileID: 381530577}
+  - component: {fileID: 381530586}
   m_Layer: 31
   m_Name: Player2Obj
   m_TagString: Player2
@@ -2134,7 +2135,6 @@ MonoBehaviour:
   player2Object: {fileID: 381530576}
   m_JumpVelocity: 800
   m_MovementSmoothing: 0.05
-  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1073742199
@@ -2152,10 +2152,14 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  m_PlayerRigidBody: {fileID: 381530583}
   player1passed: 0
   player2passed: 0
+  player1Win: 0
+  player2Win: 0
   checkForDeath: {fileID: 795006303}
   statManager: {fileID: 381530577}
+  scoreCounter: {fileID: 381530586}
 --- !u!50 &381530583
 Rigidbody2D:
   serializedVersion: 4
@@ -2246,6 +2250,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381530586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381530576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7efc5b66574a9d4cb38f3d710ba71ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Controller: {fileID: 981746081}
+  player2Controller: {fileID: 381530582}
+  player1Height: 0
+  player2Height: 0
+  player1Score: 0
+  player2Score: 0
+  startingHeight: 360
 --- !u!1001 &488810015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3236,6 +3259,7 @@ GameObject:
   - component: {fileID: 981746077}
   - component: {fileID: 981746076}
   - component: {fileID: 981746075}
+  - component: {fileID: 981746085}
   m_Layer: 30
   m_Name: Player1Obj
   m_TagString: Player1
@@ -3360,7 +3384,6 @@ MonoBehaviour:
   player2Object: {fileID: 381530576}
   m_JumpVelocity: 800
   m_MovementSmoothing: 0.05
-  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 2147484023
@@ -3378,10 +3401,14 @@ MonoBehaviour:
   m_player2BonusLife2: 0
   m_player1Alive: 1
   m_player2Alive: 1
+  m_PlayerRigidBody: {fileID: 981746082}
   player1passed: 0
   player2passed: 0
+  player1Win: 0
+  player2Win: 0
   checkForDeath: {fileID: 795006303}
   statManager: {fileID: 981746075}
+  scoreCounter: {fileID: 981746085}
 --- !u!50 &981746082
 Rigidbody2D:
   serializedVersion: 4
@@ -3472,6 +3499,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981746085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981746074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7efc5b66574a9d4cb38f3d710ba71ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Controller: {fileID: 981746081}
+  player2Controller: {fileID: 381530582}
+  player1Height: 0
+  player2Height: 0
+  player1Score: 0
+  player2Score: 0
+  startingHeight: 360
 --- !u!1 &1012409234
 GameObject:
   m_ObjectHideFlags: 0
