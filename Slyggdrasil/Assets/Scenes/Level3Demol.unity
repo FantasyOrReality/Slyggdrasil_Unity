@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 182969266}
   m_Layer: 31
   m_Name: CeilingCheckObj
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8748,7 +8748,7 @@ GameObject:
   - component: {fileID: 1733256224}
   m_Layer: 31
   m_Name: GroundCheckObj
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 71362165}
   - component: {fileID: 71362164}
   - component: {fileID: 71362163}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DeathDetector
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -3712,7 +3712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1009487621
 Transform:
   m_ObjectHideFlags: 0
@@ -4095,12 +4095,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1460526594}
   m_CeilingCheck: {fileID: 2130169184}
   nextLevelDetector: {fileID: 1001150250}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 0
+  player2Lives: 0
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 1830
@@ -4112,7 +4108,6 @@ MonoBehaviour:
   checkForDeath: {fileID: 71362163}
   statManager: {fileID: 1189280980}
   scoreCounter: {fileID: 1189280989}
-  playerExistTracker: {fileID: 0}
 --- !u!50 &1189280986
 Rigidbody2D:
   serializedVersion: 4
@@ -5686,12 +5681,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 2088116460}
   m_CeilingCheck: {fileID: 1009487621}
   nextLevelDetector: {fileID: 1001150250}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 0
+  player2Lives: 0
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 1830
@@ -5703,7 +5694,6 @@ MonoBehaviour:
   checkForDeath: {fileID: 71362163}
   statManager: {fileID: 1845424653}
   scoreCounter: {fileID: 1845424663}
-  playerExistTracker: {fileID: 0}
 --- !u!50 &1845424660
 Rigidbody2D:
   serializedVersion: 4
@@ -10077,7 +10067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2088116460
 Transform:
   m_ObjectHideFlags: 0

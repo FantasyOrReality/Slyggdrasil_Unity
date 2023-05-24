@@ -2432,12 +2432,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1856288209}
   m_CeilingCheck: {fileID: 963638051}
   nextLevelDetector: {fileID: 48769282}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 0
+  player2Lives: 0
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 360
@@ -2449,7 +2445,6 @@ MonoBehaviour:
   checkForDeath: {fileID: 1714979282}
   statManager: {fileID: 962887235}
   scoreCounter: {fileID: 962887244}
-  playerExistTracker: {fileID: 1933667018}
 --- !u!50 &962887241
 Rigidbody2D:
   serializedVersion: 4
@@ -9238,7 +9233,7 @@ GameObject:
   - component: {fileID: 1714979284}
   - component: {fileID: 1714979283}
   - component: {fileID: 1714979282}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DeathDetector
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -9618,12 +9613,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 822322078}
   m_CeilingCheck: {fileID: 2008262827}
   nextLevelDetector: {fileID: 48769282}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 0
+  player2Lives: 0
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 360
@@ -9635,7 +9626,6 @@ MonoBehaviour:
   checkForDeath: {fileID: 1714979282}
   statManager: {fileID: 1832865058}
   scoreCounter: {fileID: 1832865068}
-  playerExistTracker: {fileID: 1933667018}
 --- !u!50 &1832865065
 Rigidbody2D:
   serializedVersion: 4
@@ -11707,12 +11697,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 822322078}
   m_CeilingCheck: {fileID: 2008262827}
   nextLevelDetector: {fileID: 48769282}
-  m_player1Life: 0
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 0
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 0
+  player2Lives: 0
   m_player1Alive: 0
   m_player2Alive: 0
   levelBonus: 0
@@ -11724,7 +11710,6 @@ MonoBehaviour:
   checkForDeath: {fileID: 0}
   statManager: {fileID: 0}
   scoreCounter: {fileID: 0}
-  playerExistTracker: {fileID: 1933667018}
 --- !u!1001 &1934192824
 PrefabInstance:
   m_ObjectHideFlags: 0

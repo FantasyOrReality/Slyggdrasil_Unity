@@ -2269,12 +2269,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1306986338}
   m_CeilingCheck: {fileID: 197603286}
   nextLevelDetector: {fileID: 574554694}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 0
+  player2Lives: 0
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 1110
@@ -2286,7 +2282,6 @@ MonoBehaviour:
   checkForDeath: {fileID: 1858405329}
   statManager: {fileID: 375998377}
   scoreCounter: {fileID: 375998387}
-  playerExistTracker: {fileID: 0}
 --- !u!50 &375998384
 Rigidbody2D:
   serializedVersion: 4
@@ -5386,7 +5381,7 @@ GameObject:
   - component: {fileID: 1858405331}
   - component: {fileID: 1858405330}
   - component: {fileID: 1858405329}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DeathDetector
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -9922,12 +9917,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1590236560}
   m_CeilingCheck: {fileID: 349853572}
   nextLevelDetector: {fileID: 574554694}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 0
+  player2Lives: 0
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 1110
@@ -9939,7 +9930,6 @@ MonoBehaviour:
   checkForDeath: {fileID: 1858405329}
   statManager: {fileID: 2034008570}
   scoreCounter: {fileID: 2034008579}
-  playerExistTracker: {fileID: 0}
 --- !u!50 &2034008576
 Rigidbody2D:
   serializedVersion: 4
