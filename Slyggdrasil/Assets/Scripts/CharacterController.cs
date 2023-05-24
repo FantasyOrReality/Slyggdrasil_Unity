@@ -93,232 +93,361 @@ public class CharacterController : MonoBehaviour
 
 	private void Awake()
 	{
-		m_PlayerRigidBody = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
-
-
-
-		if (OnLandEvent == null) //If the land event hasn't been triggered
+		if (player1Object != null && player2Object != null)
 		{
-			OnLandEvent = new UnityEvent(); //Trigger the landing event
+			m_PlayerRigidBody = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
+		
+			if (!m_player1Alive)
+			{
+				Destroy(player1Object, 0.1f);
+
+			}
+
+			if (!m_player2Alive)
+			{
+				Destroy(player2Object, 0.1f);
+			}
+
+
+			if (OnLandEvent == null) //If the land event hasn't been triggered
+			{
+				OnLandEvent = new UnityEvent(); //Trigger the landing event
+			}
 		}
 	}
 
 	private void FixedUpdate()
 	{
-		bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
-		m_Grounded = false; //Reset the grounded state
-		
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the platform collisions
-		Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the fake platform collisions
-
-		for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
+		if (player1Object != null)
 		{
-			if (colliders[i].gameObject != gameObject)
+			bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
+			m_Grounded = false; //Reset the grounded state
+
+			// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+			// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+			Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the platform collisions
+			Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the fake platform collisions
+
+			for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
 			{
-				// Add a vertical force to the player
-				Vector2 velocity = m_PlayerRigidBody.velocity; //Get the vector
-				velocity.y = m_JumpVelocity; //Modify a vector component
-				m_PlayerRigidBody.velocity = velocity; //Set back to vector
+				if (colliders[i].gameObject != gameObject)
+				{
+					// Add a vertical force to the player
+					Vector2 velocity = m_PlayerRigidBody.velocity; //Get the vector
+					velocity.y = m_JumpVelocity; //Modify a vector component
+					m_PlayerRigidBody.velocity = velocity; //Set back to vector
 
-				m_Grounded = true; //Set the grounded state
+					m_Grounded = true; //Set the grounded state
 
 
-				
 
 
-				//if (!wasGrounded)
-				//{
-				//OnLandEvent.Invoke();//Start the Landing event
-				//}
+
+					//if (!wasGrounded)
+					//{
+					//OnLandEvent.Invoke();//Start the Landing event
+					//}
+				}
+			}
+
+			for (int i = 0; i < fakeColliders.Length; i++) //For each collider in the array...
+			{
+				if (fakeColliders[i].gameObject != gameObject)
+				{
+					m_Grounded = true; //Set the grounded state
+
+
+					// Let the player fall
+					//Debug.Log("FakePlatform Collision");
+
+
+
+					//OnLandEvent.Invoke();//Start the Landing event
+
+				}
 			}
 		}
 
-		for (int i = 0; i < fakeColliders.Length; i++) //For each collider in the array...
+		if (player2Object != null)
 		{
-			if (fakeColliders[i].gameObject != gameObject)
+			bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
+			m_Grounded = false; //Reset the grounded state
+
+			// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+			// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+			Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the platform collisions
+			Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the fake platform collisions
+
+			for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
 			{
-				m_Grounded = true; //Set the grounded state
+				if (colliders[i].gameObject != gameObject)
+				{
+					// Add a vertical force to the player
+					Vector2 velocity = m_PlayerRigidBody.velocity; //Get the vector
+					velocity.y = m_JumpVelocity; //Modify a vector component
+					m_PlayerRigidBody.velocity = velocity; //Set back to vector
+
+					m_Grounded = true; //Set the grounded state
 
 
-				// Let the player fall
-				//Debug.Log("FakePlatform Collision");
 
-				
-				
-				//OnLandEvent.Invoke();//Start the Landing event
-				
+
+
+					//if (!wasGrounded)
+					//{
+					//OnLandEvent.Invoke();//Start the Landing event
+					//}
+				}
+			}
+
+			for (int i = 0; i < fakeColliders.Length; i++) //For each collider in the array...
+			{
+				if (fakeColliders[i].gameObject != gameObject)
+				{
+					m_Grounded = true; //Set the grounded state
+
+
+					// Let the player fall
+					//Debug.Log("FakePlatform Collision");
+
+
+
+					//OnLandEvent.Invoke();//Start the Landing event
+
+				}
 			}
 		}
-	}
+		}
 
 
 	public void Move(float move)
 	{
-		
-		// Move the character by finding the target velocity
-		Vector3 targetVelocity = new Vector2(move * 10f, m_PlayerRigidBody.velocity.y);
-		// And then smoothing it out and applying it to the character
-		m_PlayerRigidBody.velocity = Vector3.SmoothDamp(m_PlayerRigidBody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+		if (player1Object != null)
+		{
+			// Move the character by finding the target velocity
+			Vector3 targetVelocity = new Vector2(move * 10f, m_PlayerRigidBody.velocity.y);
+			// And then smoothing it out and applying it to the character
+			m_PlayerRigidBody.velocity = Vector3.SmoothDamp(m_PlayerRigidBody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 
-		// If the input is moving the player right and the player is facing left...
-		if (move > 0 && !m_MovingRight)
-		{
-			//flip the player.
-			Flip();
-		}
-		// Otherwise if the input is moving the player left and the player is facing right...
-		else if (move < 0 && m_MovingRight)
-		{
-			//flip the player.
-			Flip();
-		}
-		
-		// If the player should jump...
-		//if (m_Grounded && jump)
-		//{
+			// If the input is moving the player right and the player is facing left...
+			if (move > 0 && !m_MovingRight)
+			{
+				//flip the player.
+				Flip();
+			}
+			// Otherwise if the input is moving the player left and the player is facing right...
+			else if (move < 0 && m_MovingRight)
+			{
+				//flip the player.
+				Flip();
+			}
+
+			// If the player should jump...
+			//if (m_Grounded && jump)
+			//{
 			//m_Grounded = false;
 
 			// Add a vertical force to the player
 			//m_PlayerRigidBody.AddForce(new Vector2(0f, m_JumpVelocity));
 
-		//}
+			//}
+		}
+
+		if (player2Object != null)
+		{
+			// Move the character by finding the target velocity
+			Vector3 targetVelocity = new Vector2(move * 10f, m_PlayerRigidBody.velocity.y);
+			// And then smoothing it out and applying it to the character
+			m_PlayerRigidBody.velocity = Vector3.SmoothDamp(m_PlayerRigidBody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+
+			// If the input is moving the player right and the player is facing left...
+			if (move > 0 && !m_MovingRight)
+			{
+				//flip the player.
+				Flip();
+			}
+			// Otherwise if the input is moving the player left and the player is facing right...
+			else if (move < 0 && m_MovingRight)
+			{
+				//flip the player.
+				Flip();
+			}
+
+			// If the player should jump...
+			//if (m_Grounded && jump)
+			//{
+			//m_Grounded = false;
+
+			// Add a vertical force to the player
+			//m_PlayerRigidBody.AddForce(new Vector2(0f, m_JumpVelocity));
+
+			//}
+		}
 	}
 
 
 	private void Flip()
 	{
-		// Switch the way the player is labelled as facing.
-		m_MovingRight = !m_MovingRight;
+		if (player1Object != null && player2Object != null)
+		{
+			// Switch the way the player is labelled as facing.
+			m_MovingRight = !m_MovingRight;
 
-		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+			// Multiply the player's x local scale by -1.
+			Vector3 theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
     {
-		
-		if (collision.tag == "CounterTrigger")
+		if (player1Object != null && player2Object != null)
 		{
-			if (m_PlayerRigidBody.tag == "Player1")
+			if (collision.tag == "CounterTrigger")
 			{
-				Debug.Log("Collision between P1 and Trigger detected!");
-				player1passed = true;
-				scoreCounter.UpdatePlayer1Score(levelBonus);
-				StartCoroutine(Cooldown(10));
-
-			}
-			else if (m_PlayerRigidBody.tag == "Player2")
-            {
-				Debug.Log("Collision between P2 and Trigger detected!");
-				player2passed = true;
-				
-				scoreCounter.UpdatePlayer2Score(360);
-
-				StartCoroutine(Cooldown(10));
-
-			}
-		}
-
-		if (collision.tag == "WinTrigger")
-		{
-			if (m_PlayerRigidBody.tag == "Player1")
-			{
-				player1Win = true;
-				player2Win = false;
-			}
-			else if (m_PlayerRigidBody.tag == "Player2")
-			{
-				player1Win = false;
-				player2Win = true;
-			}
-
-		}
-
-		if (collision.tag == "DeathTrigger")
-        {
-			if (m_PlayerRigidBody.tag == "Player1")
-			{
-				Debug.Log("Collision between P1 and death barrier detected!");
-
-				//Go through the life system
-				if (m_player1BonusLife2 == true)
-                {
-					StartCoroutine(Cooldown(10));
-					Debug.Log("Player 1 lives = 2");
-					m_player1BonusLife2 = false;
-
-
-				}
-				else if(m_player1BonusLife2 == false && m_player1BonusLife == true)
-                {
-					StartCoroutine(Cooldown(10));
-					Debug.Log("Player 1 lives = 1");
-					m_player1BonusLife = false;
-
-
-
-				}
-				else if (m_player1BonusLife2 == false && m_player1BonusLife == false && m_player1Life == true)
-                {
-					m_player1Life = false;
-					m_player1Alive = false;
-					checkForDeath.player1Alive = false;
-					Destroy(player1Object, 0.1f);
-					Debug.Log("Player 1 lives = 0");
-
-
-				}
-
-
-
-
-			}
-			else if (m_PlayerRigidBody.tag == "Player2")
-			{
-				Debug.Log("Collision between P2 and death barrier detected!");
-				//Go through the life system
-				if (m_player2BonusLife2 == true)
+				if (m_PlayerRigidBody.tag == "Player1")
 				{
-					m_player2BonusLife2 = false;
-					StartCoroutine(Cooldown(10));
-					Debug.Log("Player 2 lives = 2");
+					if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
+					{
+						Debug.Log("Collision between P1 and Trigger detected!");
+						player1passed = true;
+						scoreCounter.UpdatePlayer1Score(levelBonus);
+						StartCoroutine(Cooldown(10));
+					}
+
+					else if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == false)
+					{
+						Debug.Log("Collision between P1 and Trigger detected!");
+						player1passed = true;
+						player2passed = true;
+						scoreCounter.UpdatePlayer1Score(levelBonus);
+						scoreCounter.UpdatePlayer2Score(0);
+						StartCoroutine(Cooldown(10));
+					}
 
 				}
-				else if (m_player2BonusLife == true)
+				if (m_PlayerRigidBody.tag == "Player2")
 				{
-					m_player2BonusLife = false;
-					StartCoroutine(Cooldown(10));
-					Debug.Log("Player 2 lives = 1");
+					if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
+					{
+						Debug.Log("Collision between P2 and Trigger detected!");
+						player2passed = true;
+
+						scoreCounter.UpdatePlayer2Score(levelBonus);
+
+						StartCoroutine(Cooldown(10));
+					}
+					else if (checkForDeath.player1Alive == false && checkForDeath.player2Alive == false)
+					{
+						Debug.Log("Collision between P2 and Trigger detected!");
+						player1passed = true;
+						player2passed = true;
+						scoreCounter.UpdatePlayer2Score(levelBonus);
+						scoreCounter.UpdatePlayer1Score(0);
+						StartCoroutine(Cooldown(10));
+					}
+
+				}
+			}
+
+			if (collision.tag == "WinTrigger")
+			{
+				if (m_PlayerRigidBody.tag == "Player1")
+				{
+					player1Win = true;
+					player2Win = false;
+				}
+				else if (m_PlayerRigidBody.tag == "Player2")
+				{
+					player1Win = false;
+					player2Win = true;
+				}
+
+			}
+
+			if (collision.tag == "DeathTrigger")
+			{
+				if (m_PlayerRigidBody.tag == "Player1")
+				{
+					Debug.Log("Collision between P1 and death barrier detected!");
+
+					//Go through the life system
+					if (m_player1BonusLife2 == true)
+					{
+						StartCoroutine(Cooldown(10));
+						Debug.Log("Player 1 lives = 2");
+						m_player1BonusLife2 = false;
+
+
+					}
+					else if (m_player1BonusLife2 == false && m_player1BonusLife == true)
+					{
+						StartCoroutine(Cooldown(10));
+						Debug.Log("Player 1 lives = 1");
+						m_player1BonusLife = false;
+
+
+
+					}
+					else if (m_player1BonusLife2 == false && m_player1BonusLife == false && m_player1Life == true)
+					{
+						m_player1Life = false;
+						m_player1Alive = false;
+						checkForDeath.player1Alive = false;
+						Destroy(player1Object, 0.1f);
+						Debug.Log("Player 1 lives = 0");
+
+
+					}
+
+
 
 
 				}
-				else if (m_player2Life == true)
+				else if (m_PlayerRigidBody.tag == "Player2")
 				{
-					m_player2Life = false;
-					m_player2Alive = false;
-					checkForDeath.player2Alive = false;
+					Debug.Log("Collision between P2 and death barrier detected!");
+					//Go through the life system
+					if (m_player2BonusLife2 == true)
+					{
+						m_player2BonusLife2 = false;
+						StartCoroutine(Cooldown(10));
+						Debug.Log("Player 2 lives = 2");
+
+					}
+					else if (m_player2BonusLife == true)
+					{
+						m_player2BonusLife = false;
+						StartCoroutine(Cooldown(10));
+						Debug.Log("Player 2 lives = 1");
 
 
-					Destroy(player2Object, 0.1f);
+					}
+					else if (m_player2Life == true)
+					{
+						m_player2Life = false;
+						m_player2Alive = false;
+						checkForDeath.player2Alive = false;
 
-					Debug.Log("Player 2 lives = 0");
+
+						Destroy(player2Object, 0.1f);
+
+						Debug.Log("Player 2 lives = 0");
 
 
+
+					}
 
 				}
 
 			}
 
+
+			StartCoroutine(Cooldown(10));
 		}
-
-		
-		StartCoroutine(Cooldown(10));
-
 	}
 
 	IEnumerator Cooldown(int cooldownTime)

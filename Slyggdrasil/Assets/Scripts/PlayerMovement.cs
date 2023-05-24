@@ -24,26 +24,37 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player1HorizontalMove = Input.GetAxisRaw("Player1Horizontal") * moveSpeed; //Get the input from player 1 and give it a move speed
-        player2HorizontalMove = Input.GetAxisRaw("Player2Horizontal") * moveSpeed; //Get the input from player 2 and give it a move speed
+        if(controller != null)
+        {
+            player1HorizontalMove = Input.GetAxisRaw("Player1Horizontal") * moveSpeed; //Get the input from player 1 and give it a move speed
+
+        }
+
+        if (controller != null)
+        {
+            player2HorizontalMove = Input.GetAxisRaw("Player2Horizontal") * moveSpeed; //Get the input from player 2 and give it a move speed
+        }
     }
 
     void FixedUpdate()
     {
-        //Move players
-        if (playerNumber == 1)
+        if (controller != null)
         {
-            controller.Move(player1HorizontalMove * Time.fixedDeltaTime);
+            //Move players
+            if (playerNumber == 1)
+            {
+                controller.Move(player1HorizontalMove * Time.fixedDeltaTime);
 
+            }
+            else if (playerNumber == 2)
+            {
+                controller.Move(player2HorizontalMove * Time.fixedDeltaTime);
+            }
+            else
+            {
+                //Do nothing
+            }
         }
-        else if (playerNumber == 2)
-        {
-            controller.Move(player2HorizontalMove * Time.fixedDeltaTime);
-        }
-        else
-        {
-            //Do nothing
-        }    
 
     }
 }

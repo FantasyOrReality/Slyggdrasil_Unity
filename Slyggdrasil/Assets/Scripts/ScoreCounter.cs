@@ -29,13 +29,18 @@ public class ScoreCounter : MonoBehaviour
 
     void FixedUpdate()
     {
-        GetPlayer1Height();
-        UpdatePlayer1Score(player1Height);
+        if (player1Controller != null)
+        {
+            GetPlayer1Height();
+            UpdatePlayer1Score(player1Height);
+        }
 
 
-        GetPlayer2Height();
-        UpdatePlayer2Score(player2Height);
-
+        if (player2Controller != null)
+        { 
+            GetPlayer2Height();
+            UpdatePlayer2Score(player2Height);
+        }
     }
 
     public void GetPlayer1Height()
