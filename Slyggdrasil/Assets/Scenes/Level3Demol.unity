@@ -2137,19 +2137,15 @@ MonoBehaviour:
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1073742199
+    m_Bits: 1073742198
   m_WhatIsFakeGround:
     serializedVersion: 2
     m_Bits: 128
   m_GroundCheck: {fileID: 1733256224}
   m_CeilingCheck: {fileID: 182969266}
   nextLevelDetector: {fileID: 1673791959}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 1
+  player2Lives: 1
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 750
@@ -2924,7 +2920,7 @@ GameObject:
   - component: {fileID: 795006305}
   - component: {fileID: 795006304}
   - component: {fileID: 795006303}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DeathDetector
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -3387,19 +3383,15 @@ MonoBehaviour:
   m_MovementSmoothing: 0.05
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 2147484023
+    m_Bits: 2147484022
   m_WhatIsFakeGround:
     serializedVersion: 2
     m_Bits: 128
   m_GroundCheck: {fileID: 1954794969}
   m_CeilingCheck: {fileID: 1095521324}
   nextLevelDetector: {fileID: 1673791959}
-  m_player1Life: 1
-  m_player1BonusLife: 0
-  m_player1BonusLife2: 0
-  m_player2Life: 1
-  m_player2BonusLife: 0
-  m_player2BonusLife2: 0
+  player1Lives: 1
+  player2Lives: 1
   m_player1Alive: 1
   m_player2Alive: 1
   levelBonus: 750

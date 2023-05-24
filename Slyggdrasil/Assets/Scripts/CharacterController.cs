@@ -36,6 +36,7 @@ public class CharacterController : MonoBehaviour
 	[SerializeField]
 	public GameObject nextLevelDetector; //The detector for the next level
 
+	/* Old lives system
 	[SerializeField]
 	public bool m_player1Life = true; //The default life player 1 starts with
 	[SerializeField]
@@ -49,6 +50,13 @@ public class CharacterController : MonoBehaviour
 	public bool m_player2BonusLife = false; //Bonus life player 2 is granted by the first revival upgrade
 	[SerializeField]
 	public bool m_player2BonusLife2 = false; //A second bonus life player 2 is granted by another revival upgrade
+	*/
+
+	//Player lives system
+	public int player1Lives;
+	public int player2Lives;
+
+
 	[SerializeField]
 	public bool m_player1Alive = true; //Whether player 1 is dead or not
 	[SerializeField]
@@ -307,152 +315,122 @@ public class CharacterController : MonoBehaviour
     {
 		//if (player1Object != null && player2Object == null)
 		//{
-			if (collision.tag == "CounterTrigger")
+		if (collision.tag == "CounterTrigger")
+		{
+			if (m_PlayerRigidBody.tag == "Player1")
 			{
-				if (m_PlayerRigidBody.tag == "Player1")
-				{
-					if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
-					{
-						Debug.Log("Collision between P1 and Trigger detected!");
-						player1passed = true;
-						scoreCounter.UpdatePlayer1Score(levelBonus);
-						StartCoroutine(Cooldown(10));
-					}
-
-					else if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == false)
-					{
-						Debug.Log("Collision between P1 and Trigger detected!");
-						player1passed = true;
-						//player2passed = true;
-						scoreCounter.UpdatePlayer1Score(levelBonus);
-						//scoreCounter.UpdatePlayer2Score(0);
-						StartCoroutine(Cooldown(10));
-					}
-
+				if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
+		 		{
+					Debug.Log("Collision between P1 and Trigger detected!");
+					player1passed = true;
+					scoreCounter.UpdatePlayer1Score(levelBonus);
+					StartCoroutine(Cooldown(10));
 				}
-				if (m_PlayerRigidBody.tag == "Player2")
+
+				else if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == false)
 				{
-					if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
-					{
-						Debug.Log("Collision between P2 and Trigger detected!");
-						player2passed = true;
-
-						scoreCounter.UpdatePlayer2Score(levelBonus);
-
-						StartCoroutine(Cooldown(10));
-					}
-					else if (checkForDeath.player1Alive == false && checkForDeath.player2Alive == true)
-					{
-						Debug.Log("Collision between P2 and Trigger detected!");
-						//player1passed = true;
-						player2passed = true;
-						scoreCounter.UpdatePlayer2Score(levelBonus);
-						scoreCounter.UpdatePlayer1Score(0);
-						StartCoroutine(Cooldown(10));
-					}
-
-				}
-			}
-
-			if (collision.tag == "WinTrigger")
-			{
-				if (m_PlayerRigidBody.tag == "Player1")
-				{
-					player1Win = true;
-					player2Win = false;
-				}
-				else if (m_PlayerRigidBody.tag == "Player2")
-				{
-					player1Win = false;
-					player2Win = true;
+					Debug.Log("Collision between P1 and Trigger detected!");
+					player1passed = true;
+					//player2passed = true;
+					scoreCounter.UpdatePlayer1Score(levelBonus);
+					//scoreCounter.UpdatePlayer2Score(0);
+					StartCoroutine(Cooldown(10));
 				}
 
 			}
-
-			if (collision.tag == "DeathTrigger")
+			if (m_PlayerRigidBody.tag == "Player2")
 			{
-				if (m_PlayerRigidBody.tag == "Player1")
+				if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
 				{
-					Debug.Log("Collision between P1 and death barrier detected!");
+					Debug.Log("Collision between P2 and Trigger detected!");
+					player2passed = true;
 
-					//Go through the life system
-					if (m_player1BonusLife2 == true)
-					{
-						StartCoroutine(Cooldown(10));
-						Debug.Log("Player 1 lives = 2");
-						m_player1BonusLife2 = false;
+					scoreCounter.UpdatePlayer2Score(levelBonus);
 
+					StartCoroutine(Cooldown(10));
+				}
+				else if (checkForDeath.player1Alive == false && checkForDeath.player2Alive == true)
+				{
+					Debug.Log("Collision between P2 and Trigger detected!");
+					//player1passed = true;
+					player2passed = true;
+					scoreCounter.UpdatePlayer2Score(levelBonus);
+					scoreCounter.UpdatePlayer1Score(0);
+					StartCoroutine(Cooldown(10));
+				}
 
-					}
-					else if (m_player1BonusLife2 == false && m_player1BonusLife == true)
-					{
-						StartCoroutine(Cooldown(10));
-						Debug.Log("Player 1 lives = 1");
-						m_player1BonusLife = false;
+			}
+		}
 
+		if (collision.tag == "WinTrigger")
+		{
+			if (m_PlayerRigidBody.tag == "Player1")
+			{
+				player1Win = true;
+				player2Win = false;
+			}
+			else if (m_PlayerRigidBody.tag == "Player2")
+			{
+				player1Win = false;
+				player2Win = true;
+			}
 
+		}
 
-					}
-					else if (m_player1BonusLife2 == false && m_player1BonusLife == false && m_player1Life == true)
-					{
-						m_player1Life = false;
-						m_player1Alive = false;
-						//playerExistTracker.MonitorLives(true, false, false);// Monitor lives(Is this player 1?, is this player 2?, is the player alive?)
-						checkForDeath.player1Alive = false;
-						Destroy(player1Object, 0.1f);
-						Debug.Log("Player 1 lives = 0");
+		if (collision.tag == "DeathTrigger")
+		{
+			if (m_PlayerRigidBody.tag == "Player1")
+			{
+				Debug.Log("Collision between P1 and death barrier detected!");
+				//Go through the new lives system
+				//take away a life
+				player1Lives = player1Lives - 1;
 
+				//Check the lives to see if it's above 0
+				if (player1Lives > 0)
+				{
 
-					}
-
-
-
+					//respawn if lives are above 0
 
 				}
-				else if (m_PlayerRigidBody.tag == "Player2")
+				else if (player1Lives<=0)
 				{
+					Destroy(player1Object, 0.0f);
+
+					//m_player1Alive = false;
+					Debug.Log("Player 1 lives = 0");
+
+				}
+				//Delete object if not
+
+
+
+			}
+			if (m_PlayerRigidBody.tag == "Player2")
+			{
+				
+				//Check the lives to see if it's above 0
+				if (player2Lives > 0)
+				{
+					player2Lives = player2Lives - 1;
+
 					Debug.Log("Collision between P2 and death barrier detected!");
-					//Go through the life system
-					if (m_player2BonusLife2 == true)
-					{
-						m_player2BonusLife2 = false;
-						StartCoroutine(Cooldown(10));
-						Debug.Log("Player 2 lives = 2");
 
-					}
-					else if (m_player2BonusLife == true)
-					{
-						m_player2BonusLife = false;
-						StartCoroutine(Cooldown(10));
-						Debug.Log("Player 2 lives = 1");
+					//respawn if lives are above 0
 
 
-					}
-					else if (m_player2Life == true)
-					{
-						m_player2Life = false;
-						m_player2Alive = false;
-						checkForDeath.player2Alive = false;
-
-					//playerExistTracker.MonitorLives(false, true, false);// Monitor lives(Is this player 1?, is this player 2?, is the player alive?)
-
-
-
-						Destroy(player2Object, 0.1f);
-
-						Debug.Log("Player 2 lives = 0");
-
-
-
-					}
+				}
+				else if (player2Lives<=0)
+				{
+					Destroy(player2Object, 0.0f);
+					//m_player2Alive = false;
+					Debug.Log("Player 2 lives = 0");
 
 				}
 
 			}
-
-
-			StartCoroutine(Cooldown(10));
-		//}
+		//StartCoroutine(Cooldown(10));
+		}
 	}
 
 	IEnumerator Cooldown(int cooldownTime)
