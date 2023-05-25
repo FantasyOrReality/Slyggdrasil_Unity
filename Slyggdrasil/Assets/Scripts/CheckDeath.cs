@@ -9,17 +9,17 @@ public class CheckDeath : MonoBehaviour
     public CharacterController player1Controller; //Reference the character controller script for player 1
     public CharacterController player2Controller; //Reference the character controller script for player 2
 
-    public bool player1Alive = true;
+    public bool player1Alive;
 
-    public bool player2Alive = true;
+    public bool player2Alive;
 
 
     
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (player1Controller != null && player2Controller != null)
-        {
+        //if (player1Controller != null && player2Controller != null)
+        //{
 
 
             //if (player1Alive == false)
@@ -42,12 +42,11 @@ public class CheckDeath : MonoBehaviour
 
             if (player1Alive == false && player2Alive == false)
             {
-
                 //Change to the loss screen
                 SceneManager.LoadScene("LossMenu"); //Load the lose screen 
 
             }
-        }
+        //}
     }
 
     IEnumerator Cooldown(int cooldownTime)

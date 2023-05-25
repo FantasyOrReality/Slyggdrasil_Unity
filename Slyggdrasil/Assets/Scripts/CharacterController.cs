@@ -28,6 +28,8 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] 
 	private LayerMask m_WhatIsGround; // A mask determining what is ground to the character
 	[SerializeField]
+	private LayerMask m_WhatIsCeiling;
+	[SerializeField]
 	private LayerMask m_WhatIsFakeGround; // A mask determining what is fake to the character
 	[SerializeField] 
 	private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
@@ -152,10 +154,10 @@ public class CharacterController : MonoBehaviour
 
 
 
-					//if (!wasGrounded)
-					//{
-					//OnLandEvent.Invoke();//Start the Landing event
-					//}
+					if (!wasGrounded)
+					{
+					 OnLandEvent.Invoke();//Start the Landing event
+					}
 				}
 			}
 
@@ -202,10 +204,10 @@ public class CharacterController : MonoBehaviour
 
 
 
-					//if (!wasGrounded)
-					//{
-					//OnLandEvent.Invoke();//Start the Landing event
-					//}
+					if (!wasGrounded)
+					{
+					 OnLandEvent.Invoke();//Start the Landing event
+					}
 				}
 			}
 
@@ -395,8 +397,8 @@ public class CharacterController : MonoBehaviour
 				}
 				else if (player1Lives<=0)
 				{
+					checkForDeath.player1Alive = false;
 					Destroy(player1Object, 0.0f);
-
 					//m_player1Alive = false;
 					Debug.Log("Player 1 lives = 0");
 
@@ -422,6 +424,7 @@ public class CharacterController : MonoBehaviour
 				}
 				else if (player2Lives<=0)
 				{
+					checkForDeath.player2Alive = false;
 					Destroy(player2Object, 0.0f);
 					//m_player2Alive = false;
 					Debug.Log("Player 2 lives = 0");
@@ -432,6 +435,11 @@ public class CharacterController : MonoBehaviour
 		//StartCoroutine(Cooldown(10));
 		}
 	}
+
+	//public void Jump
+    //{
+
+    //}
 
 	IEnumerator Cooldown(int cooldownTime)
     {
