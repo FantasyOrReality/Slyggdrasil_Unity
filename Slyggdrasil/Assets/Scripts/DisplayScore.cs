@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DisplayScore : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class DisplayScore : MonoBehaviour
     public ScoreCounter player2Score;
 
     //Add text
-    public Text scoreText;
+    public TMP_Text player1ScoreText;
+    public TMP_Text player2ScoreText;
+
 
     void Update()
     {
-        scoreText.text = player1Score.endScore1.ToString();
+        player1ScoreText.text = "HGT : " + player1Score.endScore1.ToString();
+        player2ScoreText.text = "HGT : " + player2Score.endScore2.ToString();
+
     }
 }
