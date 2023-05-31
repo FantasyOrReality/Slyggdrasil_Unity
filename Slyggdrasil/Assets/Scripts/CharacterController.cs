@@ -90,6 +90,7 @@ public class CharacterController : MonoBehaviour
 
 	public StatManager statManager;
 	public ScoreCounter scoreCounter;
+	public NextLevel nextLevel;
 	//public PlayerExistTracker playerExistTracker;
 
 
@@ -107,16 +108,18 @@ public class CharacterController : MonoBehaviour
 		if (player1Object != null && player2Object != null)
 		{
 			m_PlayerRigidBody = GetComponent<Rigidbody2D>(); //The player's rigid body being assigned
-		
+			
+			
+
 			if (!m_player1Alive)
 			{
-				Destroy(player1Object, 0.1f);
+				Destroy(player1Object);
 
 			}
 
 			if (!m_player2Alive)
 			{
-				Destroy(player2Object, 0.1f);
+				Destroy(player2Object);
 			}
 
 

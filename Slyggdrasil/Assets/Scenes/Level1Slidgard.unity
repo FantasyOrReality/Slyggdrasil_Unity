@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 48769284}
   - component: {fileID: 48769283}
   - component: {fileID: 48769285}
-  - component: {fileID: 48769286}
   m_Layer: 8
   m_Name: NextLevelDetector
   m_TagString: CounterTrigger
@@ -202,20 +201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Controller: {fileID: 1832865064}
   player2Controller: {fileID: 962887240}
-  player1AliveTracker: 0
-  player2AliveTracker: 0
---- !u!114 &48769286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48769282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &74568233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2726,7 +2711,6 @@ GameObject:
   - component: {fileID: 962887236}
   - component: {fileID: 962887235}
   - component: {fileID: 962887244}
-  - component: {fileID: 962887245}
   m_Layer: 31
   m_Name: Player2Obj
   m_TagString: Player2
@@ -2856,6 +2840,7 @@ MonoBehaviour:
   checkForDeath: {fileID: 1714979282}
   statManager: {fileID: 962887235}
   scoreCounter: {fileID: 962887244}
+  nextLevel: {fileID: 48769285}
 --- !u!50 &962887241
 Rigidbody2D:
   serializedVersion: 4
@@ -2967,18 +2952,6 @@ MonoBehaviour:
   startingHeight: 0
   endScore1: 0
   endScore2: 0
---- !u!114 &962887245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962887234}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &963638050
 GameObject:
   m_ObjectHideFlags: 0
@@ -9669,8 +9642,6 @@ MonoBehaviour:
   player2Controller: {fileID: 962887240}
   player1Alive: 1
   player2Alive: 1
-  player1Lives: 0
-  player2Lives: 0
 --- !u!61 &1714979283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9894,7 +9865,6 @@ GameObject:
   - component: {fileID: 1832865059}
   - component: {fileID: 1832865058}
   - component: {fileID: 1832865068}
-  - component: {fileID: 1832865069}
   m_Layer: 30
   m_Name: Player1Obj
   m_TagString: Player1
@@ -10044,6 +10014,7 @@ MonoBehaviour:
   checkForDeath: {fileID: 1714979282}
   statManager: {fileID: 1832865058}
   scoreCounter: {fileID: 1832865068}
+  nextLevel: {fileID: 48769285}
 --- !u!50 &1832865065
 Rigidbody2D:
   serializedVersion: 4
@@ -10155,18 +10126,6 @@ MonoBehaviour:
   startingHeight: 0
   endScore1: 0
   endScore2: 0
---- !u!114 &1832865069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832865057}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1849335750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12133,6 +12092,7 @@ MonoBehaviour:
   checkForDeath: {fileID: 0}
   statManager: {fileID: 0}
   scoreCounter: {fileID: 0}
+  nextLevel: {fileID: 0}
 --- !u!1001 &1934192824
 PrefabInstance:
   m_ObjectHideFlags: 0

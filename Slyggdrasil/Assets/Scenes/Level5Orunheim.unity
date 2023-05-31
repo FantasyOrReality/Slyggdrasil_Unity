@@ -2814,7 +2814,6 @@ GameObject:
   - component: {fileID: 574554697}
   - component: {fileID: 574554696}
   - component: {fileID: 574554695}
-  - component: {fileID: 574554698}
   m_Layer: 8
   m_Name: NextLevelDetector
   m_TagString: CounterTrigger
@@ -2836,7 +2835,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Controller: {fileID: 375998383}
   player2Controller: {fileID: 2034008575}
-  levelNumber: 0
 --- !u!61 &574554696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2878,18 +2876,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &574554698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574554694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &608255934
 GameObject:
   m_ObjectHideFlags: 0
@@ -5829,8 +5815,6 @@ MonoBehaviour:
   player2Controller: {fileID: 2034008575}
   player1Alive: 1
   player2Alive: 1
-  player1Lives: 0
-  player2Lives: 0
 --- !u!61 &1858405330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10483,6 +10467,7 @@ GameObject:
   - component: {fileID: 2061004040}
   - component: {fileID: 2061004039}
   - component: {fileID: 2061004042}
+  - component: {fileID: 2061004043}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10652,6 +10637,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2061004043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061004038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2062423931
 GameObject:
   m_ObjectHideFlags: 0

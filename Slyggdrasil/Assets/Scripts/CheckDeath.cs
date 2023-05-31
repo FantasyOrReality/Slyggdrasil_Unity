@@ -12,10 +12,9 @@ public class CheckDeath : MonoBehaviour
     public bool player1Alive;
     public bool player2Alive;
 
-    public int player1Lives;
-    public int player2Lives;
+    //public int player1Lives;
+    //public int player2Lives;
 
-    
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -40,13 +39,30 @@ public class CheckDeath : MonoBehaviour
 
 
             //}
-
-            if (player1Alive == false && player2Alive == false)
+        if (player1Controller != null)
+        {
+            if (player1Alive == false)
             {
-                //Change to the loss screen
-                SceneManager.LoadScene("LossMenu"); //Load the lose screen 
-
+                //Destroy(player1Controller.gameObject);
             }
+        }
+        
+        if (player2Controller != null)
+        {
+            if (player2Alive == false)
+            {
+                //Destroy(player2Controller.gameObject);
+            }
+        }
+
+        
+
+        if (player1Alive == false && player2Alive == false)
+        {
+            //Change to the loss screen
+            SceneManager.LoadScene("LossMenu"); //Load the lose screen 
+
+        }
         //}
     }
 

@@ -9,10 +9,13 @@ public class NextLevel : MonoBehaviour
     public CharacterController player1Controller; //Reference the character controller script for player 1
     public CharacterController player2Controller; //Reference the character controller script for player 2
 
-    public bool player1AliveTracker;
-    public bool player2AliveTracker;
 
     int levelNumber;
+
+
+
+    
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -71,4 +74,63 @@ public class NextLevel : MonoBehaviour
         
 
     }
+    /*
+
+    void FixedUpdate()
+    {
+        if (player1Object != null && player2Object != null)
+        {
+            if (player1Object.player1passed == true && player2Object.player2passed == true)
+            {
+
+                //Change to the next level
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
+                Debug.Log("Level " + levelNumber + " loaded.");
+
+
+
+            }
+        }
+
+        if (player2Object == null && player1Object != null)
+        {
+            if (player1Object.player1passed == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
+                Debug.Log("Level " + levelNumber + " loaded.");
+            }
+        }
+
+        if (player1Object == null && player2Object != null)
+        {
+            if (player2Object.player2Object == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
+                Debug.Log("Level " + levelNumber + " loaded.");
+            }
+        }
+
+        if (player1Object != null)
+        {
+            if (player1Object.player1Win == true)
+            {
+                SceneManager.LoadScene("Player1WinMenu"); //Load the winning screen for player 1
+
+            }
+        }
+        if (player2Object != null)
+        {
+            if (player2Object.player2Win == true)
+            {
+                SceneManager.LoadScene("Player2WinMenu"); //Load the winning screen for player 2
+
+            }
+        }
+
+
+    }
+    */
 }
