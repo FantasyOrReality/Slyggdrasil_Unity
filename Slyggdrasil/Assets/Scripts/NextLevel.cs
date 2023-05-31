@@ -9,6 +9,9 @@ public class NextLevel : MonoBehaviour
     public CharacterController player1Controller; //Reference the character controller script for player 1
     public CharacterController player2Controller; //Reference the character controller script for player 2
 
+    public bool player1AliveTracker;
+    public bool player2AliveTracker;
+
     int levelNumber;
 
     // Update is called once per frame

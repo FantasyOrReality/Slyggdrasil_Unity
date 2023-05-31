@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-    public bool playing;
 
     public static AudioManager instance;
     // Start is called before the first frame update
@@ -32,6 +31,7 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
+            //s.source.PlayOnAwake = false;
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
@@ -40,28 +40,30 @@ public class AudioManager : MonoBehaviour
 
         Play("BackgroundMusic");
 
+        
+        
+        //if (SceneManager.GetActiveScene().buildIndex <= 0 || SceneManager.GetActiveScene().buildIndex >= 6)
+        //{
+                //MuteAudio(true);
+
+        //}
+        //else
+        //{
+                //MuteAudio(false);
+        //}
+        
 
     }
     void Start()
     {
-        Play("BackgroundMusic");
+        //Play("BackgroundMusic");
 
 
     }
 
     void Update()
     {
-        foreach (Sound s in sounds)
-        { 
-            if (SceneManager.GetActiveScene().buildIndex < 1 || SceneManager.GetActiveScene().buildIndex > 5)
-            {
-                MuteAudio(true, s);
-            }
-            else
-            {
-                MuteAudio(false, s);
-            }
-        }
+        
     }
 
     public void Play(string name)
@@ -73,34 +75,40 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        if (playing)
-        {
+        
             s.source.Play();
-            playing = false;
-        }
+        
     }
 
-    public bool MuteAudio(bool mute, Sound s)
+    public void MuteAudio(bool mute)
     {
         if (mute)
         {
             //s.source = gameObject.AddComponent<AudioSource>();
-            s.volume = 0.0f;
-            s.source.volume = s.volume;
-            s.source.Pause();
-            playing = false;
-            return playing;
+            //s.volume = 0.0f;
+            //s.source.volume = s.volume;
+            Pause("BackgroundMusic");
 
 
         }
         else
         {
             //s.source = gameObject.AddComponent<AudioSource>();
-            s.volume = 100.0f;
-            s.source.volume = s.volume;
-            playing = true;
-            return playing;
-
+            //s.volume = 100.0f;
+            //s.source.volume = s.volume;
+            Play("BackgroundMusic");
         }
+    }
+
+    public void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        s.source.Pause();
     }
 }

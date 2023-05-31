@@ -6,14 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
+
+    public static DontDestroy instance;
+
+
     void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex >=1 && SceneManager.GetActiveScene().buildIndex <=5)
+        if (instance == null)
         {
-            //Keep this object between scenes
-            GameObject.DontDestroyOnLoad(this.gameObject);
-            //FindObjectOfType<AudioManager>().Play("Slyggdrasil_-_The_Climb");
+            instance = this;
         }
-        
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+
     }
 }

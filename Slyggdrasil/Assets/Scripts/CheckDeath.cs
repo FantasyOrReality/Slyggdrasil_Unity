@@ -10,9 +10,10 @@ public class CheckDeath : MonoBehaviour
     public CharacterController player2Controller; //Reference the character controller script for player 2
 
     public bool player1Alive;
-
     public bool player2Alive;
 
+    public int player1Lives;
+    public int player2Lives;
 
     
     // Update is called once per frame
