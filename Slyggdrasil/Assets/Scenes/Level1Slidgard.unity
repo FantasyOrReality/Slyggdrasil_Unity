@@ -755,7 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213336720}
   - component: {fileID: 213336719}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SlidgardBackgroundPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,8 +800,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1588059555
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2985,7 +2985,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1926662691
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f701dbff0a2c0904b8d97ad39fb730dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5659,9 +5659,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1588059555
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 49.5, y: 49.5, z: 0}
   m_MaxChunkCount: 16
@@ -10159,7 +10159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1926662691
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: da598b89ea9a4a043a89b7119fbdad40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10295,7 +10295,7 @@ GameObject:
   - component: {fileID: 1854976018}
   - component: {fileID: 1854976017}
   - component: {fileID: 1854976016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SlyggdrasilTreeWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10371,8 +10371,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2138887641
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 49.5, y: 49.5, z: 0}
