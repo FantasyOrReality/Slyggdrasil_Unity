@@ -11,6 +11,11 @@ public class ButtonFunctions : MonoBehaviour
 
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public void BackToMenu()
     {
         SceneManager.LoadScene("StartMenu");
