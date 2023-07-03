@@ -17,24 +17,10 @@ public class CharacterController : MonoBehaviour
 	[SerializeField]
 	public GameObject player2Object;
 
-	[SerializeField]
-	public float m_JumpVelocity = 800.0f;
-
 	[Range(0, .3f)] [SerializeField] 
 	private float m_MovementSmoothing = .05f; // How much to smooth out the movement
 
 	//[SerializeField] 
-	//private bool m_AirControl = true; // Whether or not a player can steer while jumping;
-	[SerializeField] 
-	private LayerMask m_WhatIsGround; // A mask determining what is ground to the character
-	[SerializeField]
-	private LayerMask m_WhatIsCeiling;
-	[SerializeField]
-	private LayerMask m_WhatIsFakeGround; // A mask determining what is fake to the character
-	[SerializeField] 
-	private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
-	[SerializeField] 
-	private Transform m_CeilingCheck; // A position marking where to check for ceilings
 	[SerializeField]
 	public GameObject nextLevelDetector; //The detector for the next level
 
@@ -67,11 +53,6 @@ public class CharacterController : MonoBehaviour
 	[SerializeField]
 	public int levelBonus;
 
-
-	//Constants
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-	private bool m_Grounded;            // Whether or not the player is grounded.
 
 	//Un-editable variables
 	public Rigidbody2D m_PlayerRigidBody; //The player's rigidbody2D
@@ -131,107 +112,9 @@ public class CharacterController : MonoBehaviour
 	}
 
 	private void FixedUpdate()
-	{
-		if (player1Object != null)
-		{
-			bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
-			m_Grounded = false; //Reset the grounded state
+	{ 
 
-			// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-			// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-			Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the platform collisions
-			Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the fake platform collisions
-
-			for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
-			{
-				if (colliders[i].gameObject != gameObject)
-				{
-					// Add a vertical force to the player
-					Vector2 velocity = m_PlayerRigidBody.velocity; //Get the vector
-					velocity.y = m_JumpVelocity; //Modify a vector component
-					m_PlayerRigidBody.velocity = velocity; //Set back to vector
-
-					m_Grounded = true; //Set the grounded state
-
-
-
-
-
-					if (!wasGrounded)
-					{
-					 OnLandEvent.Invoke();//Start the Landing event
-					}
-				}
-			}
-
-			for (int i = 0; i < fakeColliders.Length; i++) //For each collider in the array...
-			{
-				if (fakeColliders[i].gameObject != gameObject)
-				{
-					m_Grounded = true; //Set the grounded state
-
-
-					// Let the player fall
-					//Debug.Log("FakePlatform Collision");
-
-
-
-					//OnLandEvent.Invoke();//Start the Landing event
-
-				}
-			}
-		}
-
-		if (player2Object != null)
-		{
-			bool wasGrounded = m_Grounded; //Assigning the last recorded player landing
-			m_Grounded = false; //Reset the grounded state
-
-			// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-			// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-			Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //Create the collider array for checking the platform collisions
-			Collider2D[] fakeColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsFakeGround); //Create the collider array for checking the fake platform collisions
-
-			for (int i = 0; i < colliders.Length; i++) //For each collider in the array...
-			{
-				if (colliders[i].gameObject != gameObject)
-				{
-					// Add a vertical force to the player
-					Vector2 velocity = m_PlayerRigidBody.velocity; //Get the vector
-					velocity.y = m_JumpVelocity; //Modify a vector component
-					m_PlayerRigidBody.velocity = velocity; //Set back to vector
-
-					m_Grounded = true; //Set the grounded state
-
-
-
-
-
-					if (!wasGrounded)
-					{
-					 OnLandEvent.Invoke();//Start the Landing event
-					}
-				}
-			}
-
-			for (int i = 0; i < fakeColliders.Length; i++) //For each collider in the array...
-			{
-				if (fakeColliders[i].gameObject != gameObject)
-				{
-					m_Grounded = true; //Set the grounded state
-
-
-					// Let the player fall
-					//Debug.Log("FakePlatform Collision");
-
-
-
-					//OnLandEvent.Invoke();//Start the Landing event
-
-				}
-			}
-		}
-		}
+	}
 
 
 	public void Move(float move)

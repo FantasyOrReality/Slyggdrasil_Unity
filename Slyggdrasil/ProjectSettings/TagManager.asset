@@ -16,6 +16,8 @@ TagManager:
   - WinTrigger
   - Player1Score
   - Player2Score
+  - Base
+  - Moving
   layers:
   - Default
   - TransparentFX
