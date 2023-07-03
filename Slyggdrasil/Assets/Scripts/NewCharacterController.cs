@@ -7,7 +7,7 @@ public class NewCharacterController : MonoBehaviour
 {
     [SerializeField]
     private int playerID = 0;
-    
+
     private float movementSpeed = 1000.0f;
 
     Rigidbody2D rb;
@@ -25,18 +25,18 @@ public class NewCharacterController : MonoBehaviour
         {
             if (playerID == 1)
             {
-                movement = Input.GetAxis("Player1Horizontal")*movementSpeed*Time.deltaTime;
-
+                movement = Input.GetAxis("Player1Horizontal")*movementSpeed;
+                
             }
             else if (playerID == 2)
             {
-                movement = Input.GetAxis("Player2Horizontal")*movementSpeed*Time.deltaTime;
+                movement = Input.GetAxis("Player2Horizontal")*movementSpeed;
 
             }
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         Vector2 velocity = rb.velocity;
         velocity.x = movement;

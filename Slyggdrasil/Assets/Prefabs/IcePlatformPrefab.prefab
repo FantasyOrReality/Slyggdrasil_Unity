@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseJumpForce: 1500
-  iceJumpForce: 3000
+  iceJumpForce: 2000
   fakeJumpForce: 0
   movingJumpForce: 1500
 --- !u!251 &7951414684597065189

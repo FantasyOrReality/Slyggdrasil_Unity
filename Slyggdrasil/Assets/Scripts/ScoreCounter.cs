@@ -6,8 +6,7 @@ public class ScoreCounter : MonoBehaviour
 {
 
     //Reference the controller
-    public CharacterController player1Controller;
-    public CharacterController player2Controller;
+    public NewCharacterController playerController;
 
     //Get y values into integer variables
     public int player1Height;
@@ -26,53 +25,65 @@ public class ScoreCounter : MonoBehaviour
 
     void Start()
     {
-        player1Height = (int)player1Controller.m_PlayerRigidBody.position.y + startingHeight*10;
-        player2Height = (int)player2Controller.m_PlayerRigidBody.position.y + startingHeight * 10;
+        //if (playerController.GetPlayerID() == 1)
+        //{
+           // player1Height = playerController.GetTopHeight() + startingHeight * 10;
+
+       // }
+        //if (playerController.GetPlayerID() == 2)
+        {
+           // player2Height = playerController.GetTopHeight() + startingHeight * 10;
+        }
     }
 
     void FixedUpdate()
     {
-        if (player1Controller != null)
-        {
-            GetPlayer1Height();
-            UpdatePlayer1Score(player1Height);
-        }
+        //if (playerController.GetPlayerID() == 1)
+       // {
+        //    if (playerController != null)
+        //    {
+        //        GetPlayer1Height();
+        //        UpdatePlayer1Score(player1Height);
+        //    }
+       // }
 
-
-        if (player2Controller != null)
-        { 
-            GetPlayer2Height();
-            UpdatePlayer2Score(player2Height);
-        }
+       // if (playerController.GetPlayerID() == 2)
+        //{
+        //    if (playerController != null)
+        //    {
+        //        GetPlayer2Height();
+        //        UpdatePlayer2Score(player2Height);
+        //    }
+       // }
     }
 
     public void GetPlayer1Height()
     {
-        if(player1Controller.player1Object.tag == "Player1")
-        {
-            player1Height = (int)player1Controller.m_PlayerRigidBody.position.y + startingHeight*10;
-            player1Height = player1Height / 10;
-        }
-        else
-        {
+       // if(playerController.GetPlayerID() == 1)
+        //{
+           // player1Height = playerController.GetTopHeight() + startingHeight * 10;
+        //    player1Height = player1Height / 10;
+        //}
+       // else
+       // {
 
-        }
+       // }
 
         
     }
 
     public void GetPlayer2Height()
     {
-        if (player2Controller.player2Object.tag == "Player2")
-        {
-            player2Height = (int)player2Controller.m_PlayerRigidBody.position.y + startingHeight * 10;
-            player2Height = player2Height / 10;
+       // if (playerController.GetPlayerID() == 2)
+       // {
+           // player2Height = playerController.GetTopHeight() + startingHeight * 10;
+       //     player2Height = player2Height / 10;
 
-        }
-        else
-        {
+       // }
+       // else
+       // {
 
-        }
+       // }
     }
 
 
