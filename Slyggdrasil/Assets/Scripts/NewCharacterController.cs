@@ -25,12 +25,12 @@ public class NewCharacterController : MonoBehaviour
         {
             if (playerID == 1)
             {
-                movement = Input.GetAxis("Player1Horizontal")*movementSpeed;
+                movement = Input.GetAxis("Player1Horizontal")*movementSpeed*Time.deltaTime;
 
             }
             else if (playerID == 2)
             {
-                movement = Input.GetAxis("Player2Horizontal")*movementSpeed;
+                movement = Input.GetAxis("Player2Horizontal")*movementSpeed*Time.deltaTime;
 
             }
         }
