@@ -20,41 +20,37 @@ public class NextLevel : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (player1Controller != null && player2Controller != null)
-        { 
+        
+        if (player1Controller.GetNumberOfPlayerDeaths() <= 0 || player2Controller.GetNumberOfPlayerDeaths()<=0)
+        {
             if (player1Controller.GetPassed() == true && player2Controller.GetPassed() == true)
             {
-
-                //Change to the next level
-                //SceneManager.LoadScene("Level3New");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
-                levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
-                Debug.Log("Level " + levelNumber + " loaded.");
-
-
-
+            //Change to the next level
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+            levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
+            //Debug.Log("Level " + levelNumber + " loaded.");
             }
         }
-
-        if ( player2Controller == null && player1Controller != null)
+        if (player1Controller.GetNumberOfPlayerDeaths() == 1 || player2Controller.GetNumberOfPlayerDeaths() == 1)
         {
             if (player1Controller.GetPassed() == true)
             {
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
-                Debug.Log("Level " + levelNumber + " loaded.");
+                //Debug.Log("Level " + levelNumber + " loaded.");
             }
-        }
-
-        if (player1Controller == null && player2Controller != null)
-        {
             if (player2Controller.GetPassed() == true)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
-                Debug.Log("Level " + levelNumber + " loaded.");
+                //Debug.Log("Level " + levelNumber + " loaded.");
             }
         }
+
+        
+            
+        
 
         if (player1Controller != null)
         {

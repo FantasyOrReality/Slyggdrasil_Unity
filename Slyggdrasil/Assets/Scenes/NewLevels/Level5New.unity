@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 685714343}
   - component: {fileID: 685714342}
   m_Layer: 3
-  m_Name: SlidgardBackgroundPlaceholder (2)
+  m_Name: OrunheimBackgroundPlaceholder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,7 +1140,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89c0e4a5693d20d45b31b799f24df096, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1466,7 +1466,7 @@ GameObject:
   - component: {fileID: 760651213}
   - component: {fileID: 760651212}
   m_Layer: 3
-  m_Name: SlidgardBackgroundPlaceholder (1)
+  m_Name: OrunheimBackgroundPlaceholder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1513,7 +1513,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89c0e4a5693d20d45b31b799f24df096, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1899,7 +1899,7 @@ PrefabInstance:
     - target: {fileID: -1823762018759455414, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: checkForDeath
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1534572914}
     - target: {fileID: 852076290654515186, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6812,6 +6812,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007ebc4da151a8458337389c0d8ef19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1534572914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 638660809007031361, guid: f988e6fc7bfc19241bf7c5ec7aad2dcc, type: 3}
+  m_PrefabInstance: {fileID: 631444821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d620f4d8cdc54ec4f91f4606a4548d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1538144933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8366,7 +8377,7 @@ GameObject:
   - component: {fileID: 1596836554}
   - component: {fileID: 1596836553}
   m_Layer: 3
-  m_Name: SlidgardBackgroundPlaceholder
+  m_Name: OrunheimBackgroundPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8413,7 +8424,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89c0e4a5693d20d45b31b799f24df096, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8545,7 +8556,7 @@ PrefabInstance:
     - target: {fileID: -1823762018759455414, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: checkForDeath
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1534572914}
     - target: {fileID: 852076290654515186, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: m_RootOrder
       value: 1

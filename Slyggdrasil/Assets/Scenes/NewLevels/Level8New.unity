@@ -2035,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: -1823762018759455414, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: checkForDeath
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2066555013}
     - target: {fileID: 852076290654515186, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6795,7 +6795,7 @@ GameObject:
   - component: {fileID: 1246923543}
   - component: {fileID: 1246923542}
   m_Layer: 3
-  m_Name: SlidgardBackgroundPlaceholder (1)
+  m_Name: AnaheimBackgroundPlaceholder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6842,7 +6842,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0836e8d899e6c2d41a225d9016b5cafd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6938,7 +6938,7 @@ PrefabInstance:
     - target: {fileID: -1823762018759455414, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: checkForDeath
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2066555013}
     - target: {fileID: 852076290654515186, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7092,7 +7092,7 @@ GameObject:
   - component: {fileID: 1582025606}
   - component: {fileID: 1582025605}
   m_Layer: 3
-  m_Name: SlidgardBackgroundPlaceholder (3)
+  m_Name: AnaheimBackgroundPlaceholder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7139,7 +7139,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0836e8d899e6c2d41a225d9016b5cafd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7438,7 +7438,7 @@ GameObject:
   - component: {fileID: 1866744149}
   - component: {fileID: 1866744148}
   m_Layer: 3
-  m_Name: SlidgardBackgroundPlaceholder (2)
+  m_Name: AnaheimBackgroundPlaceholder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7485,7 +7485,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0836e8d899e6c2d41a225d9016b5cafd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7576,6 +7576,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f988e6fc7bfc19241bf7c5ec7aad2dcc, type: 3}
+--- !u!114 &2066555013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 638660809007031361, guid: f988e6fc7bfc19241bf7c5ec7aad2dcc, type: 3}
+  m_PrefabInstance: {fileID: 2066555012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d620f4d8cdc54ec4f91f4606a4548d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2079233013
 GameObject:
   m_ObjectHideFlags: 0

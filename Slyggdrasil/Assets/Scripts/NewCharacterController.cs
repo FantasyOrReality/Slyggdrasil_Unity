@@ -18,6 +18,7 @@ public class NewCharacterController : MonoBehaviour
     private int playerTopHeight = 0;
 	[SerializeField]
 	private int levelBonus;
+    private int numberOfPlayerDeaths = 0;
 
 	private float movementSpeed = 1000.0f;
 
@@ -120,6 +121,10 @@ public class NewCharacterController : MonoBehaviour
     {
         return playerTopHeight;
     }
+    public int GetNumberOfPlayerDeaths()
+    {
+        return numberOfPlayerDeaths;
+    }
     
 
 
@@ -142,45 +147,38 @@ public class NewCharacterController : MonoBehaviour
 		{
 			if (playerID == 1)
 			{
-				//if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
-				//{
-					Debug.Log("Collision between P1 and Trigger detected!");
-					SetPassed(true);
-					scoreCounter.UpdatePlayer1Score(levelBonus);
-					//StartCoroutine(Cooldown(10));
-				//}
+                //Debug.Log("Collision between P1 and Trigger detected!");
 
-				//else if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == false)
-				//{
-					Debug.Log("Collision between P1 and Trigger detected!");
+                if (checkForDeath.GetCheckAlive1() == true && checkForDeath.GetCheckAlive2() == true)
+				{
 					SetPassed(true);
-					//player2passed = true;
 					scoreCounter.UpdatePlayer1Score(levelBonus);
-					//scoreCounter.UpdatePlayer2Score(0);
-					//StartCoroutine(Cooldown(10));
-				//}
+				}
+
+				else if (checkForDeath.GetCheckAlive1() == true && checkForDeath.GetCheckAlive2() == false)
+				{
+					SetPassed(true);
+					scoreCounter.UpdatePlayer1Score(levelBonus);
+				}
 
 			}
 			if (playerID ==2)
 			{
-				//if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
-				//{
-					Debug.Log("Collision between P2 and Trigger detected!");
+                //Debug.Log("Collision between P2 and Trigger detected!");
+
+                if (checkForDeath.GetCheckAlive1() == true && checkForDeath.GetCheckAlive2() == true)
+				{
 					SetPassed(true);
 
 					scoreCounter.UpdatePlayer2Score(levelBonus);
 
-					//StartCoroutine(Cooldown(10));
-				//}
-				//else if (checkForDeath.player1Alive == false && checkForDeath.player2Alive == true)
-				//{
-					Debug.Log("Collision between P2 and Trigger detected!");
-					//player1passed = true;
+				}
+				else if (checkForDeath.GetCheckAlive1() == false && checkForDeath.GetCheckAlive2() == true)
+				{
 					SetPassed(true);
+
 					scoreCounter.UpdatePlayer2Score(levelBonus);
-					scoreCounter.UpdatePlayer1Score(0);
-					//StartCoroutine(Cooldown(10));
-				//}
+				}
 
 			}
 		}
@@ -218,18 +216,17 @@ public class NewCharacterController : MonoBehaviour
                 SetAlive(false);
                 Destroy(playerSprite);
                 Destroy(playerCollider2D);
-
-                //playerAlive = false;
-                //Destroy(gameObject);
+                numberOfPlayerDeaths += 1;
             }
-            else if (playerID == 2)
+            if (playerID == 2)
             {
                 SetAlive(false);
+                //SetPassed(true);
                 Destroy(playerSprite);
                 Destroy(playerCollider2D);
+                numberOfPlayerDeaths += 1;
 
-                //playerAlive = false;
-                //Destroy(gameObject);
+
             }
         }
 	}
