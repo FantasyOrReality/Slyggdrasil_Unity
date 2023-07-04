@@ -26,8 +26,8 @@ public class NextLevel : MonoBehaviour
             {
 
                 //Change to the next level
-                SceneManager.LoadScene("Level3New");
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                //SceneManager.LoadScene("Level3New");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
                 Debug.Log("Level " + levelNumber + " loaded.");
 
