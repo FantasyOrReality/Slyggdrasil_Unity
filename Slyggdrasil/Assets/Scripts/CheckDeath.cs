@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CheckDeath : MonoBehaviour
 {
-    public CharacterController player1Controller; //Reference the character controller script for player 1
-    public CharacterController player2Controller; //Reference the character controller script for player 2
+    public NewCharacterController player1Controller; //Reference the character controller script for player 1
+    public NewCharacterController player2Controller; //Reference the character controller script for player 2
 
     public bool player1Alive;
     public bool player2Alive;

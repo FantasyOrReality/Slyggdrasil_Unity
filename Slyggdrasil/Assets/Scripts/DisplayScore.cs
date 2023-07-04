@@ -17,8 +17,8 @@ public class DisplayScore : MonoBehaviour
 
     void Update()
     {
-        player1ScoreText.text = "HGT : " + player1Score.endScore1.ToString();
-        player2ScoreText.text = "HGT : " + player2Score.endScore2.ToString();
+        player1ScoreText.text = "HGT : " + player1Score.GetP1EndScore().ToString();
+        player2ScoreText.text = "HGT : " + player2Score.GetP2EndScore().ToString();
 
     }
 }

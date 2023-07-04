@@ -22,11 +22,12 @@ public class NextLevel : MonoBehaviour
     {
         if (player1Controller != null && player2Controller != null)
         { 
-            if (player1Controller.player1passed == true && player2Controller.player2passed == true)
+            if (player1Controller.GetPassed() == true && player2Controller.GetPassed() == true)
             {
 
                 //Change to the next level
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                SceneManager.LoadScene("Level3New");
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
                 Debug.Log("Level " + levelNumber + " loaded.");
 
@@ -37,7 +38,7 @@ public class NextLevel : MonoBehaviour
 
         if ( player2Controller == null && player1Controller != null)
         {
-            if (player1Controller.player1passed == true)
+            if (player1Controller.GetPassed() == true)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
@@ -47,7 +48,7 @@ public class NextLevel : MonoBehaviour
 
         if (player1Controller == null && player2Controller != null)
         {
-            if (player2Controller.player2passed == true)
+            if (player2Controller.GetPassed() == true)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
@@ -57,7 +58,7 @@ public class NextLevel : MonoBehaviour
 
         if (player1Controller != null)
         {
-            if (player1Controller.player1Win == true)
+            if (player1Controller.GetWin() == true)
             {
                 SceneManager.LoadScene("Player1WinMenu"); //Load the winning screen for player 1
 
@@ -65,7 +66,7 @@ public class NextLevel : MonoBehaviour
         }
         if(player2Controller != null)
         {
-            if (player2Controller.player2Win == true)
+            if (player2Controller.GetWin() == true)
             {
                 SceneManager.LoadScene("Player2WinMenu"); //Load the winning screen for player 2
 
