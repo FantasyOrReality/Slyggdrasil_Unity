@@ -165,6 +165,33 @@ public class NewCharacterController : MonoBehaviour
 
 			}
 		}
+
+		if (collision.transform.tag == "WinTrigger")
+		{
+			if (playerID == 1)
+			{
+				if (playerID == 1)
+				{
+					playerWin = true;
+				}
+				else if (playerID == 2)
+				{
+					playerWin = false;
+				}
+			}
+			else if (playerID == 2)
+			{
+				if (playerID == 1)
+				{
+					playerWin = false;
+				}
+				else if (playerID == 2)
+				{
+					playerWin = true;
+				}
+			}
+
+		}
 	}
 	/*
     void OnTriggerEnter2D(Collider2D collision)

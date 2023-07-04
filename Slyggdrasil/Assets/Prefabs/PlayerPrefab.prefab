@@ -159,6 +159,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 0
+  levelBonus: 0
+  playerPassed: 0
+  checkForDeath: {fileID: 0}
+  statManager: {fileID: 0}
+  scoreCounter: {fileID: -3657828701638800717}
+  nextLevel: {fileID: 8127747063127410078, guid: 8f8fb68bcb6d3a849946ef70063e72a7, type: 3}
 --- !u!114 &-3657828701638800717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,10 +178,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: -1823762018759455414}
-  player1Height: 0
-  player2Height: 0
-  player1Score: 0
-  player2Score: 0
   startingHeight: 0
-  endScore1: 0
-  endScore2: 0
