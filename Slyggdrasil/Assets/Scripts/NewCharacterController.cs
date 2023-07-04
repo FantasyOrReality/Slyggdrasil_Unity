@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class NewCharacterController : MonoBehaviour
 {
+    //Object components
+    [SerializeField]
+    SpriteRenderer playerSprite;
+    [SerializeField]
+    CapsuleCollider2D playerCollider2D;
+
     [SerializeField]
     private int playerID = 0;
     private int playerHeight = 0;
@@ -16,9 +21,12 @@ public class NewCharacterController : MonoBehaviour
 
 	private float movementSpeed = 1000.0f;
 
-	[SerializeField]
+    [SerializeField]
+    private bool playerAlive = true;
+
 	private bool playerPassed = false;
     private bool playerWin = false;
+
 
     Rigidbody2D rb;
     private float movement = 0.0f;
@@ -81,6 +89,10 @@ public class NewCharacterController : MonoBehaviour
     {
         playerWin = winSetter;
     }
+    public void SetAlive(bool aliveSetter)
+    {
+        playerAlive = aliveSetter;
+    }
 
     //Public Getters
     public bool GetPassed()
@@ -91,7 +103,11 @@ public class NewCharacterController : MonoBehaviour
     {
         return playerWin;
     }
-    
+    public bool GetAlive()
+    {
+        return playerAlive;
+    }
+
     public int GetPlayerID()
     {
         return playerID;
@@ -104,6 +120,8 @@ public class NewCharacterController : MonoBehaviour
     {
         return playerTopHeight;
     }
+    
+
 
     //Private setters
     private void SetHeight(int newHeight)
@@ -117,6 +135,7 @@ public class NewCharacterController : MonoBehaviour
 
     //Private getters
 
+    //Private collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
 		if (collision.transform.tag == "CounterTrigger")
@@ -190,147 +209,29 @@ public class NewCharacterController : MonoBehaviour
 					playerWin = true;
 				}
 			}
-
 		}
+
+		if (collision.transform.tag == "DeathTrigger")
+        {
+			if (playerID == 1)
+            {
+                SetAlive(false);
+                Destroy(playerSprite);
+                Destroy(playerCollider2D);
+
+                //playerAlive = false;
+                //Destroy(gameObject);
+            }
+            else if (playerID == 2)
+            {
+                SetAlive(false);
+                Destroy(playerSprite);
+                Destroy(playerCollider2D);
+
+                //playerAlive = false;
+                //Destroy(gameObject);
+            }
+        }
 	}
-	/*
-    void OnTriggerEnter2D(Collider2D collision)
-	{
-		//if (player1Object != null && player2Object == null)
-		//{
-		if (collision.tag == "CounterTrigger")
-		{
-			if (rb.tag == "Player1")
-			{
-				if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
-				{
-					Debug.Log("Collision between P1 and Trigger detected!");
-					playerPassed = true;
-					scoreCounter.UpdatePlayer1Score(levelBonus);
-					//StartCoroutine(Cooldown(10));
-				}
-
-				else if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == false)
-				{
-					Debug.Log("Collision between P1 and Trigger detected!");
-					playerPassed = true;
-					//player2passed = true;
-					scoreCounter.UpdatePlayer1Score(levelBonus);
-					//scoreCounter.UpdatePlayer2Score(0);
-					//StartCoroutine(Cooldown(10));
-				}
-
-			}
-			if (rb.tag == "Player2")
-			{
-				if (checkForDeath.player1Alive == true && checkForDeath.player2Alive == true)
-				{
-					Debug.Log("Collision between P2 and Trigger detected!");
-					playerPassed = true;
-
-					scoreCounter.UpdatePlayer2Score(levelBonus);
-
-					//StartCoroutine(Cooldown(10));
-				}
-				else if (checkForDeath.player1Alive == false && checkForDeath.player2Alive == true)
-				{
-					Debug.Log("Collision between P2 and Trigger detected!");
-					//player1passed = true;
-					playerPassed = true;
-					scoreCounter.UpdatePlayer2Score(levelBonus);
-					scoreCounter.UpdatePlayer1Score(0);
-					//StartCoroutine(Cooldown(10));
-				}
-
-			}
-		}
-
-		if (collision.tag == "WinTrigger")
-		{
-			if (rb.tag == "Player1")
-			{
-				if (playerID == 1)
-				{
-					playerWin = true;
-				}
-				else if (playerID == 2)
-				{
-					playerWin = false;
-				}
-			}
-			else if (rb.tag == "Player2")
-			{
-				if (playerID == 1)
-				{
-					playerWin = false;
-				}
-				else if (playerID == 2)
-				{
-					playerWin = true;
-				}
-			}
-
-		}
-
-		if (collision.tag == "DeathTrigger")
-		{
-			if (rb.tag == "Player1")
-			{
-				Debug.Log("Collision between P1 and death barrier detected!");
-				//Go through the new lives system
-				//take away a life
-				//player1Lives = player1Lives - 1;
-
-				//Check the lives to see if it's above 0
-				/*
-				if (player1Lives > 0)
-				{
-
-					//respawn if lives are above 0
-
-				}
-				else if (player1Lives <= 0)
-				{
-					checkForDeath.player1Alive = false;
-					Destroy(player1Object, 0.0f);
-					//m_player1Alive = false;
-					Debug.Log("Player 1 lives = 0");
-
-				}
-				
-				//Delete object if not
-
-
-
-			}
-			if (rb.tag == "Player2")
-			{
-
-				//Check the lives to see if it's above 0
-				/*
-				if (player2Lives > 0)
-				{
-					player2Lives = player2Lives - 1;
-
-					Debug.Log("Collision between P2 and death barrier detected!");
-
-					//respawn if lives are above 0
-
-
-				}
-				else if (player2Lives <= 0)
-				{
-					checkForDeath.player2Alive = false;
-					Destroy(player2Object, 0.0f);
-					//m_player2Alive = false;
-					Debug.Log("Player 2 lives = 0");
-
-				}
-				
-			}
-			//StartCoroutine(Cooldown(10));
-		}
-			
-	}
-			*/
+	
 }

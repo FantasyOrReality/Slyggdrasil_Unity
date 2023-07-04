@@ -158,10 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b38100741a519248ac21b2c6d4666fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSprite: {fileID: 5795755750657965890}
+  playerCollider2D: {fileID: 5795755750657965905}
   playerID: 0
   levelBonus: 0
-  playerPassed: 0
-  checkForDeath: {fileID: 0}
+  checkForDeath: {fileID: 638660809007031361, guid: f988e6fc7bfc19241bf7c5ec7aad2dcc, type: 3}
   statManager: {fileID: 0}
   scoreCounter: {fileID: -3657828701638800717}
   nextLevel: {fileID: 8127747063127410078, guid: 8f8fb68bcb6d3a849946ef70063e72a7, type: 3}

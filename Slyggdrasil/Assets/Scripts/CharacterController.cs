@@ -200,7 +200,7 @@ public class CharacterController : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
-    {
+    {/*
 		//if (player1Object != null && player2Object == null)
 		//{
 		if (collision.tag == "CounterTrigger")
@@ -248,7 +248,9 @@ public class CharacterController : MonoBehaviour
 				}
 
 			}
+		
 		}
+		*/
 
 		if (collision.tag == "WinTrigger")
 		{
@@ -283,7 +285,7 @@ public class CharacterController : MonoBehaviour
 				}
 				else if (player1Lives<=0)
 				{
-					checkForDeath.player1Alive = false;
+					//checkForDeath.player1Alive = false;
 					Destroy(player1Object, 0.0f);
 					//m_player1Alive = false;
 					Debug.Log("Player 1 lives = 0");
@@ -310,7 +312,7 @@ public class CharacterController : MonoBehaviour
 				}
 				else if (player2Lives<=0)
 				{
-					checkForDeath.player2Alive = false;
+					//checkForDeath.player2Alive = false;
 					Destroy(player2Object, 0.0f);
 					//m_player2Alive = false;
 					Debug.Log("Player 2 lives = 0");

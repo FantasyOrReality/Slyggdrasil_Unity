@@ -75,8 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b007ebc4da151a8458337389c0d8ef19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Controller: {fileID: 0}
-  player2Controller: {fileID: 0}
+  player1Controller: {fileID: -1823762018759455414, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
+  player2Controller: {fileID: -1823762018759455414, guid: d658bd166f7bd4c489f014734a40979b, type: 3}
 --- !u!114 &8127747063127410073
 MonoBehaviour:
   m_ObjectHideFlags: 0
