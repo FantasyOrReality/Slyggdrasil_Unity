@@ -155,9 +155,34 @@ public class NewCharacterController : MonoBehaviour
                 velocityBase.y = playerBounceForce; //Set the velocity to the pre-determined jumping height
                 rb.velocity = velocityBase; //Set the collided object's velocity to our velocity variable
             }
+
+            //Collision from below?
+            if (rb.position.y < collision.transform.position.y)
+            {
+                Vector2 velocityBase = rb.velocity;
+                velocityBase.y = -playerBounceForce; //Set the velocity to the pre-determined jumping height
+                rb.velocity = velocityBase; //Set the collided object's velocity to our velocity variable
+            }
+
+            //Collision from the left?
+            //if (rb.position.x < collision.transform.position.x)
+            //{
+               // Vector2 velocityBase = rb.velocity;
+               // velocityBase.x = playerBounceForce*10; //Set the velocity to the pre-determined jumping height
+               // rb.velocity = velocityBase; //Set the collided object's velocity to our velocity variable
+            //}
+
+            //Collision from the right?
+            //if (rb.position.x > collision.transform.position.x)
+            //{
+               // Vector2 velocityBase = rb.velocity;
+                //velocityBase.x = playerBounceForce*10; //Set the velocity to the pre-determined jumping height
+                //rb.velocity = velocityBase; //Set the collided object's velocity to our velocity variable
+            //}
+
         }
 
-		if (collision.transform.tag == "CounterTrigger")
+        if (collision.transform.tag == "CounterTrigger")
 		{
 			if (playerID == 1)
 			{
