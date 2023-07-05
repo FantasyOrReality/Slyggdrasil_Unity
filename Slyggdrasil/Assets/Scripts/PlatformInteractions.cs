@@ -14,6 +14,7 @@ public class PlatformInteractions : MonoBehaviour
     [SerializeField]
     private float movingJumpForce = 1500.0f;
 
+
     //Collision occurred
     void OnCollisionEnter2D(Collision2D collision)
     {

@@ -12,23 +12,26 @@ public class NewCharacterController : MonoBehaviour
     [SerializeField]
     CapsuleCollider2D playerCollider2D;
 
+    //Player stats
     [SerializeField]
     private int playerID = 0;
     private int playerHeight = 0;
     private int playerTopHeight = 0;
-	[SerializeField]
-	private int levelBonus;
-    private int numberOfPlayerDeaths = 0;
-
-	private float movementSpeed = 1000.0f;
-
+    private float movementSpeed = 1000.0f;
     [SerializeField]
     private bool playerAlive = true;
+    [SerializeField]
+    private float playerBounceForce = 1500.0f;
 
-	private bool playerPassed = false;
+
+    //Trackable values
+    [SerializeField]
+	private int levelBonus;
+    private int numberOfPlayerDeaths = 0;
+    private bool playerPassed = false;
     private bool playerWin = false;
 
-
+    //Misc
     Rigidbody2D rb;
     private float movement = 0.0f;
 
@@ -143,6 +146,17 @@ public class NewCharacterController : MonoBehaviour
     //Private collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.transform.tag == "Player")
+        {
+            //Collision from above?
+            if (rb.position.y > collision.transform.position.y)
+            {
+                Vector2 velocityBase = rb.velocity;
+                velocityBase.y = playerBounceForce; //Set the velocity to the pre-determined jumping height
+                rb.velocity = velocityBase; //Set the collided object's velocity to our velocity variable
+            }
+        }
+
 		if (collision.transform.tag == "CounterTrigger")
 		{
 			if (playerID == 1)

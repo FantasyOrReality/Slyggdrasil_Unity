@@ -162,6 +162,7 @@ MonoBehaviour:
   playerCollider2D: {fileID: 5795755750657965905}
   playerID: 0
   levelBonus: 0
+  playerAlive: 1
   checkForDeath: {fileID: 638660809007031361, guid: f988e6fc7bfc19241bf7c5ec7aad2dcc, type: 3}
   statManager: {fileID: 0}
   scoreCounter: {fileID: -3657828701638800717}
