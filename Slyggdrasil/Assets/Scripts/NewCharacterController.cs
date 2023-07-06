@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -28,6 +29,8 @@ public class NewCharacterController : MonoBehaviour
     [SerializeField]
 	private int levelBonus;
     private int numberOfPlayerDeaths = 0;
+    [SerializeField]
+    private int currentLevel = 0;
     private bool playerPassed = false;
     private bool playerWin = false;
 
@@ -97,6 +100,10 @@ public class NewCharacterController : MonoBehaviour
     {
         playerAlive = aliveSetter;
     }
+    public void SetCurrentLevel(int levelSetter)
+    {
+        currentLevel = levelSetter;
+    }
 
     //Public Getters
     public bool GetPassed()
@@ -127,6 +134,10 @@ public class NewCharacterController : MonoBehaviour
     public int GetNumberOfPlayerDeaths()
     {
         return numberOfPlayerDeaths;
+    }
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
     }
     
 

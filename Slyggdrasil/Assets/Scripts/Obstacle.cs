@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-
     [SerializeField]
     GameObject[] obstacle; //The objects we will be spawning
     [SerializeField]
@@ -42,7 +41,7 @@ public class Obstacle : MonoBehaviour
                 yield return new WaitForSeconds(existTime); //Wait a set time for the obstacle's existence
                 Destroy(gameObject, detonateTime); //Destroy the object after a set time. Could use an editable variable to adjust the second value
             }
-            else
+            else if(this.tag == "LateSpawning")
             {
                 yield return new WaitForSeconds(existTime + 1.0f); //Wait a set time for the obstacle's existence
                 var WANTED = Random.Range(minTras, maxTras); //Set up the x range that obstacles will spawn between
@@ -50,6 +49,10 @@ public class Obstacle : MonoBehaviour
                 GameObject gameObject = Instantiate(obstacle[Random.Range(0, obstacle.Length)], POSITION, Quaternion.identity); //Spawn the obstacle on the screen
                 yield return new WaitForSeconds(existTime+1.0f); //Wait a set time for the obstacle's existence
                 Destroy(gameObject, detonateTime); 
+            }
+            else if(this.tag == "Upspawning")
+            {
+
             }
         }
     }

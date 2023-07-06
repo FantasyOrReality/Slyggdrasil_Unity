@@ -7,9 +7,6 @@ public class Sound
     public string name;
 
     public AudioClip clip;
-
-
-
     [Range(0.0f, 100.0f)]
     public float volume;
     [Range(0.1f,3.0f)]
@@ -19,4 +16,5 @@ public class Sound
 
     [HideInInspector] //Despite being public, this won't show in the editor
     public AudioSource source;
+
 }

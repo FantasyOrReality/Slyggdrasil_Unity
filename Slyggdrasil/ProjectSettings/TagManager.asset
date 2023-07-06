@@ -19,6 +19,11 @@ TagManager:
   - Base
   - Moving
   - Obstacle
+  - Music
+  - UpSpawning
+  - Wall
+  - SpawnFromRight
+  - SpawnFromLeft
   layers:
   - Default
   - TransparentFX

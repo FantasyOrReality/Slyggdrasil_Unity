@@ -25,10 +25,12 @@ public class NextLevel : MonoBehaviour
         {
             if (player1Controller.GetPassed() == true && player2Controller.GetPassed() == true)
             {
-            //Change to the next level
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
-            levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
-            //Debug.Log("Level " + levelNumber + " loaded.");
+                //Change to the next level
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
+                levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
+                player1Controller.SetCurrentLevel(levelNumber);
+                player2Controller.SetCurrentLevel(levelNumber);
+                Debug.Log("Level " + levelNumber + " loaded.");
             }
         }
         if (player1Controller.GetNumberOfPlayerDeaths() == 1 || player2Controller.GetNumberOfPlayerDeaths() == 1)
@@ -38,13 +40,17 @@ public class NextLevel : MonoBehaviour
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
-                //Debug.Log("Level " + levelNumber + " loaded.");
+                player1Controller.SetCurrentLevel(levelNumber);
+                player2Controller.SetCurrentLevel(levelNumber);
+                Debug.Log("Level " + levelNumber + " loaded.");
             }
             if (player2Controller.GetPassed() == true)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Load the scene at the next index
                 levelNumber = SceneManager.GetActiveScene().buildIndex + 2;
-                //Debug.Log("Level " + levelNumber + " loaded.");
+                player1Controller.SetCurrentLevel(levelNumber);
+                player2Controller.SetCurrentLevel(levelNumber);
+                Debug.Log("Level " + levelNumber + " loaded.");
             }
         }
 
@@ -57,7 +63,7 @@ public class NextLevel : MonoBehaviour
             if (player1Controller.GetWin() == true)
             {
                 SceneManager.LoadScene("Player1WinMenu"); //Load the winning screen for player 1
-
+                
             }
         }
         if(player2Controller != null)
