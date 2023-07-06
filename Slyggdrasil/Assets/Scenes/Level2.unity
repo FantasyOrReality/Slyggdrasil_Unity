@@ -297,7 +297,7 @@ MonoBehaviour:
   spawnPriority: 3
   obstacle:
   - {fileID: 265939911}
-  existTime: 1
+  existTime: 2
   minTras: 0
   maxTras: 0
   spawnFromHeight: 0
@@ -796,7 +796,7 @@ MonoBehaviour:
   spawnPriority: 2
   obstacle:
   - {fileID: 194888909}
-  existTime: 1
+  existTime: 2
   minTras: 0
   maxTras: 0
   spawnFromHeight: 0
@@ -3712,7 +3712,7 @@ MonoBehaviour:
   spawnPriority: 1
   obstacle:
   - {fileID: 1780316371}
-  existTime: 1
+  existTime: 2
   minTras: 0
   maxTras: 0
   spawnFromHeight: 0
@@ -9770,7 +9770,7 @@ MonoBehaviour:
   spawnPriority: 4
   obstacle:
   - {fileID: 1676324141}
-  existTime: 1
+  existTime: 2
   minTras: 0
   maxTras: 0
   spawnFromHeight: 0

@@ -19,11 +19,8 @@ public class SpawnDirectional : MonoBehaviour
     [SerializeField]
     float existTime = 0.5f; //How long until a new object spawns
     float detonateTime = 1.0f; //How long until object is destroyed
-    [SerializeField]
     float minTras; //The minimum x spawn position
-    [SerializeField]
     float maxTras; //The maximum x spawn position
-    [SerializeField]
     float spawnFromHeight = 0.0f;
 
     private void Start()
