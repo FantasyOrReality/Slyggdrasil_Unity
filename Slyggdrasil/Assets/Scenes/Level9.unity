@@ -10872,6 +10872,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8127747063127410052, guid: 8f8fb68bcb6d3a849946ef70063e72a7, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: 2173.6553
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127747063127410052, guid: 8f8fb68bcb6d3a849946ef70063e72a7, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 55.99145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127747063127410052, guid: 8f8fb68bcb6d3a849946ef70063e72a7, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -812.94916
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127747063127410052, guid: 8f8fb68bcb6d3a849946ef70063e72a7, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: 55.99145
+      objectReference: {fileID: 0}
     - target: {fileID: 8127747063127410078, guid: 8f8fb68bcb6d3a849946ef70063e72a7, type: 3}
       propertyPath: player1Controller
       value: 
@@ -11143,7 +11159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8426556730115463507, guid: 6b6370c8ff77ac544a3e3c25f229a176, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8426556730115463507, guid: 6b6370c8ff77ac544a3e3c25f229a176, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11205,7 +11221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8426556730115463507, guid: 6b6370c8ff77ac544a3e3c25f229a176, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 500
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 8426556730115463507, guid: 6b6370c8ff77ac544a3e3c25f229a176, type: 3}
       propertyPath: m_LocalPosition.y
