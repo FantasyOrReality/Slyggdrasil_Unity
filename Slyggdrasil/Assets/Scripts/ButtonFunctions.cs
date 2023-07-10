@@ -5,10 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlaySinglePlayer()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene("1pLevel1");
 
+    }
+    public void PlayMultiPlayer()
+    {
+        SceneManager.LoadScene("2pLevel1");
+
+    }
+
+    public void SelectMode()
+    {
+        SceneManager.LoadScene("ModeSelect");
     }
 
     public void QuitGame()

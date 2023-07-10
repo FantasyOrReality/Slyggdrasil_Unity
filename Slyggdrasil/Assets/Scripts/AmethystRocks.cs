@@ -19,7 +19,7 @@ public class AmethystRocks : MonoBehaviour
     [SerializeField]
     GameObject[] obstacle; //The objects we will be spawning
     [SerializeField]
-    float existTime = 0.5f; //How long until a new object spawns
+    //float existTime = 0.5f; //How long until a new object spawns
     float detonateTime = 1.0f; //How long until object is destroyed
     float minTras; //The minimum x spawn position
     float maxTras; //The maximum x spawn position

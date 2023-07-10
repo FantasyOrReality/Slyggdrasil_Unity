@@ -12,15 +12,26 @@ public class DontDestroy : MonoBehaviour
 
     void Awake()
     {
-            if (instance == null)
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        else
+        {
+            if (this.transform.name == instance.name)
             {
-                instance = this;
+                Destroy(gameObject);
+
             }
             else
             {
-                Destroy(gameObject);
-                return;
+                instance = this;
             }
-        DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        //DontDestroyOnLoad(gameObject);
     }
 }
