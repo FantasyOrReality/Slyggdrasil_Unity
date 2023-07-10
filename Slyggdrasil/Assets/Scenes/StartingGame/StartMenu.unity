@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 298634121}
   - component: {fileID: 298634120}
   - component: {fileID: 298634119}
+  - component: {fileID: 298634122}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -362,6 +363,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &298634122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298634117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca24312d5a1149d40ab49a0efb0b0b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
+  audioManager: {fileID: 0}
+  sound:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &571888125
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &571888127
 AudioSource:
   m_ObjectHideFlags: 0
@@ -388,7 +410,7 @@ AudioSource:
   m_GameObject: {fileID: 571888125}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 683e6db6b4052bd40bcd1714529eead0, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9d73e7743fe7ee74dae20cf69b37efe2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -526,7 +548,7 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 683e6db6b4052bd40bcd1714529eead0, type: 2}
   settingsMenu: {fileID: 0}
 --- !u!4 &664484828
 Transform:
@@ -554,7 +576,6 @@ GameObject:
   - component: {fileID: 821339475}
   - component: {fileID: 821339474}
   - component: {fileID: 821339473}
-  - component: {fileID: 821339476}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -628,18 +649,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &821339476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821339471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &973192091
 GameObject:
   m_ObjectHideFlags: 0
