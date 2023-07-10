@@ -13,8 +13,20 @@ public class AudioManager : MonoBehaviour
     public AudioMixer audioMixer;
     public SettingsMenu settingsMenu;
 
+    
+
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -31,14 +43,18 @@ public class AudioManager : MonoBehaviour
 
     public void Update()
     {
-        foreach (Sound s in sounds)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            //s.source.PlayOnAwake = false;
+            foreach (Sound s in sounds)
+            {
+                //s.source.PlayOnAwake = false;
 
-            s.source.volume = settingsMenu.GetVolume();
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
+                s.source.volume = settingsMenu.GetVolume();
+                s.source.pitch = s.pitch;
+                s.source.loop = s.loop;
+            }
         }
+        
     }
 
     public void Play(string name)

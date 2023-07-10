@@ -211,7 +211,6 @@ GameObject:
   - component: {fileID: 357996285}
   - component: {fileID: 357996284}
   - component: {fileID: 357996283}
-  - component: {fileID: 357996286}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -304,27 +303,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &357996286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357996281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca24312d5a1149d40ab49a0efb0b0b41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 683e6db6b4052bd40bcd1714529eead0, type: 2}
-  audioManager: {fileID: 1222847073}
-  sound:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &491498122
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222847074}
   - component: {fileID: 1222847073}
-  - component: {fileID: 1222847075}
+  - component: {fileID: 1222847076}
   m_Layer: 0
   m_Name: AudioManagerObj
   m_TagString: Untagged
@@ -998,7 +976,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 683e6db6b4052bd40bcd1714529eead0, type: 2}
-  settingsMenu: {fileID: 357996286}
+  settingsMenu: {fileID: 1222847076}
 --- !u!4 &1222847074
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,7 +992,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1222847075
+--- !u!114 &1222847076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1023,9 +1001,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1222847072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
+  m_Script: {fileID: 11500000, guid: ca24312d5a1149d40ab49a0efb0b0b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 683e6db6b4052bd40bcd1714529eead0, type: 2}
+  audioManager: {fileID: 1222847073}
+  sound:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1533691499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1176,7 @@ GameObject:
   - component: {fileID: 2035966405}
   - component: {fileID: 2035966404}
   - component: {fileID: 2035966403}
-  - component: {fileID: 2035966402}
+  - component: {fileID: 2035966406}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -1197,18 +1184,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2035966402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035966401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &2035966403
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1275,6 +1250,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2035966406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035966401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2084373399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1353,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 357996286}
+      - m_Target: {fileID: 1222847076}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0

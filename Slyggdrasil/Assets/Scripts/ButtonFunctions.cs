@@ -15,6 +15,10 @@ public class ButtonFunctions : MonoBehaviour
         SceneManager.LoadScene("2pLevel1");
 
     }
+    public void GoToSettings()
+    {
+        SceneManager.LoadScene("OptionsMenu");
+    }
 
     public void SelectMode()
     {

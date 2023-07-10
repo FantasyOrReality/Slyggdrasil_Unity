@@ -526,6 +526,8 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  audioMixer: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!4 &664484828
 Transform:
   m_ObjectHideFlags: 0
@@ -1017,7 +1019,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1626279603}
         m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: GoToSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

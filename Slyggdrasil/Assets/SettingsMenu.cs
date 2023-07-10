@@ -12,6 +12,11 @@ public class SettingsMenu : MonoBehaviour
 
     private float volume;
 
+    public void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     public void SetVolume (float newVolume)
     {
         

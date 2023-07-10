@@ -15,23 +15,11 @@ public class DontDestroy : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-            return;
         }
         else
         {
-            if (this.transform.name == instance.name)
-            {
-                Destroy(gameObject);
-
-            }
-            else
-            {
-                instance = this;
-            }
-            DontDestroyOnLoad(gameObject);
-            return;
+            Destroy(gameObject);
         }
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 }
