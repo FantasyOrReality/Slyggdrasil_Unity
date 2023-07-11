@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
     public AudioMixer audioMixer;
-    public SettingsMenu settingsMenu;
+    //public SettingsMenu settingsMenu;
 
     
 
@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             //s.source.PlayOnAwake = false;
 
-            s.source.volume = settingsMenu.GetVolume();
+            //s.source.volume = settingsMenu.GetVolume();
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
             {
                 //s.source.PlayOnAwake = false;
 
-                s.source.volume = settingsMenu.GetVolume();
+                //s.source.volume = settingsMenu.GetVolume();
                 s.source.pitch = s.pitch;
                 s.source.loop = s.loop;
             }

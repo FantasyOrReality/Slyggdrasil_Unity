@@ -39,7 +39,17 @@ public class CheckDeath : MonoBehaviour
             if (player1Controller.GetAlive() == false && player2Controller.GetAlive() == false)
             {
                 //Change to the loss screen
-                SceneManager.LoadScene("LossMenu"); //Load the lose screen 
+
+                if (SceneManager.GetActiveScene().buildIndex >= 3 && SceneManager.GetActiveScene().buildIndex <=11) //In multiplayer mode
+                {
+                    SceneManager.LoadScene("2pLossMenu"); //Load the lose screen 
+
+                }
+                else if (SceneManager.GetActiveScene().buildIndex >=15 && SceneManager.GetActiveScene().buildIndex <=23) //In singleplayer mode
+                {
+                    SceneManager.LoadScene("1pLossMenu"); //Load the lose screen 
+
+                }
 
             }
         }

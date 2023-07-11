@@ -54,25 +54,52 @@ public class NextLevel : MonoBehaviour
             }
         }
 
-        
-            
-        
 
-        if (player1Controller != null)
+
+        if (SceneManager.GetActiveScene().buildIndex == 11)
         {
-            if (player1Controller.GetWin() == true)
+            if (player1Controller != null)
             {
-                SceneManager.LoadScene("Player1WinMenu"); //Load the winning screen for player 1
-                
+                if (player1Controller.GetWin() == true)
+                {
+                    SceneManager.LoadScene("Player1WinMenu"); //Load the winning screen for player 1
+
+                }
+            }
+            if (player2Controller != null)
+            {
+                if (player2Controller.GetWin() == true)
+                {
+                    SceneManager.LoadScene("Player2WinMenu"); //Load the winning screen for player 2
+
+                }
             }
         }
-        if(player2Controller != null)
+        else if (SceneManager.GetActiveScene().buildIndex == 23)
         {
-            if (player2Controller.GetWin() == true)
-            {
-                SceneManager.LoadScene("Player2WinMenu"); //Load the winning screen for player 2
+            //if(player1Controller.GetPlayerSprite() == "ThunarSlimeBaseDesignFixed-1.png") //If player's skin is Thunar
+            //{
+                if (player1Controller != null)
+                {
+                    if (player1Controller.GetWin() == true)
+                    {
+                        SceneManager.LoadScene("1pThunarWin"); //Load the winning screen for player 1
 
-            }
+                    }
+                }
+            //}
+            //else if (player1Controller.GetPlayerSprite() == "LukuSlimeBaseDesign-1.png") //If player's skin is Luku
+            //{
+                //if (player1Controller != null)
+                //{
+                   // if (player1Controller.GetWin() == true)
+                   // {
+                        //SceneManager.LoadScene("1pLukuWin"); //Load the winning screen for player 1
+
+                    //}
+               // }
+            //}
+            
         }
         
 

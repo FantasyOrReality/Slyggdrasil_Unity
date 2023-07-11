@@ -56,4 +56,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SinglePlayer/1pLevel1.unity
     guid: ea3e9e747c962b94fa6430610180f391
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel2.unity
+    guid: 2318102bbcd02c54a836caa5ea84d9bd
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel3.unity
+    guid: a138b847a0672d548bafd721813aa2fc
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel4.unity
+    guid: e4dd0e42ea8949d4bbd1fecb2e427236
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel5.unity
+    guid: 2b226d8c4885f9f46b489e9e746f90b3
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel6.unity
+    guid: 34aa589a3f3b47d4b9a0ff14c4f023c8
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel7.unity
+    guid: 93545e90b1c13f74fbe046c8d2dcac67
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel8.unity
+    guid: d91fbddf34838d34096365e606f9b6b9
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLevel9.unity
+    guid: 990ef5f21d3ce8b46a46b2f9287c5d1c
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLossMenu.unity
+    guid: b08b8882ea43d134abd2de7ccf1d6b29
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pThunarWin.unity
+    guid: c242e01fcc3cd924296dee5140bb2ef5
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/1pLukuWin.unity
+    guid: 2738bec37e0041c488cf7c702b90a520
   m_configObjects: {}

@@ -139,7 +139,11 @@ public class NewCharacterController : MonoBehaviour
     {
         return currentLevel;
     }
-    
+    public string GetPlayerSprite()
+    {
+        return playerSprite.ToString();
+    }
+
 
 
     //Private setters
@@ -235,28 +239,39 @@ public class NewCharacterController : MonoBehaviour
 
 		if (collision.transform.tag == "WinTrigger")
 		{
-			if (playerID == 1)
-			{
-				if (playerID == 1)
-				{
-					playerWin = true;
-				}
-				else if (playerID == 2)
-				{
-					playerWin = false;
-				}
-			}
-			else if (playerID == 2)
-			{
-				if (playerID == 1)
-				{
-					playerWin = false;
-				}
-				else if (playerID == 2)
-				{
-					playerWin = true;
-				}
-			}
+            if (SceneManager.GetActiveScene().buildIndex == 11)
+            {
+                if (playerID == 1)
+                {
+                    if (playerID == 1)
+                    {
+                        playerWin = true;
+                    }
+                    else if (playerID == 2)
+                    {
+                        playerWin = false;
+                    }
+                }
+                else if (playerID == 2)
+                {
+                    if (playerID == 1)
+                    {
+                        playerWin = false;
+                    }
+                    else if (playerID == 2)
+                    {
+                        playerWin = true;
+                    }
+                }
+            }
+            else if(SceneManager.GetActiveScene().buildIndex == 23)
+            {
+                if (playerID == 1)
+                {
+                    playerWin = true;
+                }
+                
+            }
 		}
 
 		if (collision.transform.tag == "DeathTrigger")
