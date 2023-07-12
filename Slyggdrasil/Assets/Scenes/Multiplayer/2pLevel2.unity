@@ -298,9 +298,6 @@ MonoBehaviour:
   obstacle:
   - {fileID: 265939911}
   existTime: 2
-  minTras: 0
-  maxTras: 0
-  spawnFromHeight: 0
 --- !u!212 &106872706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -662,6 +659,7 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!4 &134288665
 Transform:
   m_ObjectHideFlags: 0
@@ -797,9 +795,6 @@ MonoBehaviour:
   obstacle:
   - {fileID: 194888909}
   existTime: 2
-  minTras: 0
-  maxTras: 0
-  spawnFromHeight: 0
 --- !u!212 &192734664
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1298,7 +1293,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6906d0f79bb18624faa03e6be39a5b9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3589,7 +3584,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6906d0f79bb18624faa03e6be39a5b9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3713,9 +3708,6 @@ MonoBehaviour:
   obstacle:
   - {fileID: 1780316371}
   existTime: 2
-  minTras: 0
-  maxTras: 0
-  spawnFromHeight: 0
 --- !u!212 &693917466
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9106,7 +9098,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13c12e9684120c84984c38bf59f7f732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6906d0f79bb18624faa03e6be39a5b9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9771,9 +9763,6 @@ MonoBehaviour:
   obstacle:
   - {fileID: 1676324141}
   existTime: 2
-  minTras: 0
-  maxTras: 0
-  spawnFromHeight: 0
 --- !u!212 &1365000681
 SpriteRenderer:
   m_ObjectHideFlags: 0

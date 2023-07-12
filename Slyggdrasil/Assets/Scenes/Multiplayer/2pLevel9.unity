@@ -904,7 +904,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0836e8d899e6c2d41a225d9016b5cafd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b39e1ea0f778c5d45b7b99977c5103ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3533,7 +3533,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0836e8d899e6c2d41a225d9016b5cafd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b39e1ea0f778c5d45b7b99977c5103ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8854,7 +8854,7 @@ MonoBehaviour:
   amethystRockBoxCollider: {fileID: 692727317}
   obstacle:
   - {fileID: 293675276}
-  existTime: 1
+  detonateTime: 1
   speed: 2000
   rb: {fileID: 692727316}
 --- !u!252 &692727314
@@ -10540,7 +10540,7 @@ MonoBehaviour:
   amethystRockBoxCollider: {fileID: 1212736074}
   obstacle:
   - {fileID: 805994482}
-  existTime: 1
+  detonateTime: 1
   speed: 2000
   rb: {fileID: 1212736073}
 --- !u!252 &1212736071
@@ -11682,6 +11682,7 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!4 &1749874251
 Transform:
   m_ObjectHideFlags: 0
@@ -12242,7 +12243,7 @@ SpriteRenderer:
   m_SortingLayerID: -1588059555
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0836e8d899e6c2d41a225d9016b5cafd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b39e1ea0f778c5d45b7b99977c5103ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
