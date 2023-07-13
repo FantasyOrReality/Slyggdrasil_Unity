@@ -9960,6 +9960,7 @@ GameObject:
   - component: {fileID: 2019124152}
   - component: {fileID: 2019124151}
   - component: {fileID: 2019124150}
+  - component: {fileID: 2019124154}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -10049,6 +10050,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2019124154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019124149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4774bf2c9ba561947938577024fa6087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5525663336014369006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10056,6 +10069,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 324681526384397278, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_RotationalOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: 389.00824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 387.28616
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -387.90225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: 387.2862
+      objectReference: {fileID: 0}
     - target: {fileID: 4486179757888992060, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: m_Name
       value: MovingDeathBarrier
@@ -10069,13 +10102,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1295690333}
     - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100
+      value: -3218
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5525663335493128620, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5525663336297782872, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 548c1a2430272ba4097b7a73190ba5d3, type: 3}
     - target: {fileID: 5525663336297782873, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: velocity
       value: 40
