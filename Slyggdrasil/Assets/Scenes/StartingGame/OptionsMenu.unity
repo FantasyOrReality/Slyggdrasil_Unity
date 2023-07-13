@@ -1175,7 +1175,6 @@ GameObject:
   - component: {fileID: 2035966405}
   - component: {fileID: 2035966404}
   - component: {fileID: 2035966403}
-  - component: {fileID: 2035966406}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -1249,18 +1248,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2035966406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035966401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2084373399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,8 +1258,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2084373400}
   - component: {fileID: 2084373401}
-  - component: {fileID: 2084373403}
-  - component: {fileID: 2084373402}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -1366,27 +1351,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2084373402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084373399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860bae4df59152f488bcd5aae627dc5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2084373403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084373399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53e40a2000482942bc23bf677115c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
