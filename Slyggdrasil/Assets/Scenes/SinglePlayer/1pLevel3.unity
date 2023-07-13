@@ -6158,6 +6158,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 324681526384397278, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_RotationalOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: 379.67795
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 388.48105
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -381.75092
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289617624228290624, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: 388.481
+      objectReference: {fileID: 0}
     - target: {fileID: 4486179757888992060, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: m_Name
       value: MovingDeathDetector
@@ -6171,9 +6191,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 852386200}
     - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: m_LocalPosition.y
       value: -521
       objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270000823934445722, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525663336297782872, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 548c1a2430272ba4097b7a73190ba5d3, type: 3}
     - target: {fileID: 5525663336297782873, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: velocity
       value: 80
@@ -6188,7 +6240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7713794990349838412, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -445.7674
+      value: -3674
       objectReference: {fileID: 0}
     - target: {fileID: 7713794990349838412, guid: 16500deb4ca858640a9135b7436fdb9a, type: 3}
       propertyPath: m_LocalPosition.z
