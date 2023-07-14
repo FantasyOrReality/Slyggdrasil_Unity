@@ -7,7 +7,7 @@ public class ButtonFunctions : MonoBehaviour
 {
     public void PlaySinglePlayer()
     {
-        SceneManager.LoadScene("1pLevel1");
+        SceneManager.LoadScene("SinglePlayerCutscene");
 
     }
     public void PlayMultiPlayer()
