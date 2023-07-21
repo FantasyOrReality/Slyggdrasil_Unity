@@ -6,17 +6,17 @@ public class AudioManagerNew : MonoBehaviour
     private static readonly string FirstPlay = "FirstPlay";
     private static readonly string GameplayMusicPref = "GameplayMusicPref";
 
-
     private int firstPlayInt;
     public Slider gameplayMusicSlider;
     private float gameplayMusicFloat;
 
-    public AudioSource gameplayMusic;
-
-    private AudioDataLoadState gameplayMusicData;
+    private AudioSource gameplayMusic;
+    public GameObject musicObject;
 
     void Start()
     {
+        gameplayMusic = musicObject.GetComponent<AudioSource>();
+
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
 
         if(firstPlayInt == 0)
@@ -50,7 +50,6 @@ public class AudioManagerNew : MonoBehaviour
     public void UpdateSound()
     {
         gameplayMusic.volume = gameplayMusicSlider.value;
-
         
     }
 }

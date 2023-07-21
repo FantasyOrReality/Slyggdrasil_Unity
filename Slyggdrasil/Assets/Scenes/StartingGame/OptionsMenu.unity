@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 196720615}
   m_Layer: 0
   m_Name: Music
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -360,8 +360,8 @@ RectTransform:
   m_Children:
   - {fileID: 1178897367}
   - {fileID: 491498123}
-  - {fileID: 2084373400}
   - {fileID: 882669196}
+  - {fileID: 2084373400}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -621,7 +621,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 357996282}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1242,7 +1242,7 @@ GameObject:
   - component: {fileID: 1935885354}
   m_Layer: 0
   m_Name: AudioContainer
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayMusicSlider: {fileID: 2084373401}
-  gameplayMusic: {fileID: 196720615}
+  musicObject: {fileID: 196720613}
 --- !u!1 &2035966401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,7 +1373,7 @@ GameObject:
   - component: {fileID: 2084373401}
   m_Layer: 5
   m_Name: VolumeSlider
-  m_TagString: Untagged
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1394,7 +1394,7 @@ RectTransform:
   - {fileID: 1115170894}
   - {fileID: 941132295}
   m_Father: {fileID: 357996282}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

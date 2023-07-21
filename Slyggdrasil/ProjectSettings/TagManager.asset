@@ -24,6 +24,8 @@ TagManager:
   - Wall
   - SpawnFromRight
   - SpawnFromLeft
+  - MusicSource
+  - Slider
   layers:
   - Default
   - TransparentFX
