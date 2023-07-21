@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
 
     
 
+
     void Awake()
     {
         if (instance == null)
@@ -31,7 +32,7 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            //s.source.PlayOnAwake = false;
+            s.source.playOnAwake = false;
 
             //s.source.volume = settingsMenu.GetVolume();
             s.source.pitch = s.pitch;
@@ -66,9 +67,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        
             s.source.Play();
-        
     }
 
     public void MuteAudio(bool mute)

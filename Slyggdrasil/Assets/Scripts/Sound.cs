@@ -12,6 +12,10 @@ public class Sound
     [Range(0.1f,3.0f)]
     public float pitch;
 
+    public float duration;
+
+    public float currentProgress;
+
     public bool loop;
 
     [HideInInspector]
