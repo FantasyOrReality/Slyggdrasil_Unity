@@ -36,4 +36,10 @@ public class ButtonFunctions : MonoBehaviour
 
     }
 
+    public void SkipCutscene()
+    {
+        SceneManager.LoadScene("1pLevel1");
+
+    }
+
 }
