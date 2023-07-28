@@ -86,9 +86,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SinglePlayer/1pThunarWin.unity
     guid: c242e01fcc3cd924296dee5140bb2ef5
-  - enabled: 1
-    path: Assets/Scenes/SinglePlayer/1pLukuWin.unity
-    guid: 2738bec37e0041c488cf7c702b90a520
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/StartingGame/SingleplayerCutscene.unity
     guid: d35c6f4df9685234687940dd93de69aa
